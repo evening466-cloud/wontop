@@ -47,6 +47,24 @@ header.scrolled .hw-ch{transform:scaleY(calc(1 + (var(--s,1) - 1) * .45));animat
 @keyframes hw-pulse{0%,100%{box-shadow:0 6px 18px rgba(0,0,0,0.45),0 0 0 0 rgba(255,122,26,.5)}50%{box-shadow:0 6px 18px rgba(0,0,0,0.45),0 0 0 9px rgba(255,122,26,0)}}
 @media(min-width:960px){#hw-music{bottom:24px;}}
 
+/* 입장 화면 */
+#hw-splash{
+  position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:14px;padding:24px;text-align:center;color:#fff;transition:opacity .6s ease;
+  background:radial-gradient(circle at 50% 38%,#4a1f78 0%,#1a0d2e 55%,#0a0512 100%);
+}
+#hw-splash.hide{opacity:0;pointer-events:none;}
+.hw-sp-pumpkin{font-size:88px;line-height:1;animation:hw-bob 3.5s ease-in-out infinite;filter:drop-shadow(0 0 24px rgba(255,122,26,.7));}
+.hw-sp-title{font-family:'East Sea Dokdo','Jua',sans-serif;font-size:46px;color:#FF9A3C;text-shadow:0 2px 0 #1a0d2e,0 0 18px rgba(255,122,26,.6);line-height:1.15;}
+.hw-sp-sub{font-size:14px;letter-spacing:4px;text-transform:uppercase;color:#C9A8F0;margin-bottom:10px;}
+.hw-sp-enter{
+  padding:16px 44px;border-radius:999px;background:#FF7A1A;color:#1a0d2e;font-size:21px;font-weight:900;
+  box-shadow:0 0 0 0 rgba(255,122,26,.6);animation:hw-pulse 2s ease-in-out infinite;
+}
+.hw-sp-note{font-size:13px;color:rgba(255,255,255,.7);}
+.hw-sp-silent{margin-top:4px;font-size:13px;color:rgba(255,255,255,.55);text-decoration:underline;padding:8px;}
+@media(max-width:700px){.hw-sp-title{font-size:36px}.hw-sp-pumpkin{font-size:72px}}
+
 /* decorations (halloween.js 가 추가) */
 #hw-layer{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50;}
 .hw-bat{position:absolute;left:0;font-size:78px;line-height:1;opacity:0;animation:hw-fly linear infinite;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.55));}

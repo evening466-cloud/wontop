@@ -213,13 +213,28 @@
   });
 
   render();
+
+  // 입장 화면: "입장하기"를 누르는 순간 음악이 시작됩니다(브라우저 자동재생 차단을 통과하는 유일한 방법).
+  // 이전에 음악을 꺼둔 손님에게는 보이지 않습니다.
   if (pref !== 'off') {
-    var first = function (e) {
-      document.removeEventListener('pointerdown', first, true);
-      document.removeEventListener('keydown', first, true);
-      if (!btn.contains(e.target)) start();
+    var splash = document.createElement('div');
+    splash.id = 'hw-splash';
+    splash.innerHTML =
+      '<div class="hw-sp-pumpkin">🎃</div>' +
+      '<div class="hw-sp-title">원탑관광농원&amp;원탑캠핑장</div>' +
+      '<div class="hw-sp-sub">Happy Halloween</div>' +
+      '<button type="button" class="hw-sp-enter">🎃 입장하기</button>' +
+      '<div class="hw-sp-note">🔊 입장하면 으스스한 음악이 흘러나옵니다</div>' +
+      '<button type="button" class="hw-sp-silent">소리 없이 입장</button>';
+    document.body.appendChild(splash);
+    document.documentElement.style.overflow = 'hidden';
+    var enter = function (withMusic) {
+      if (withMusic) start();
+      splash.classList.add('hide');
+      document.documentElement.style.overflow = '';
+      setTimeout(function () { splash.remove(); }, 700);
     };
-    document.addEventListener('pointerdown', first, true);
-    document.addEventListener('keydown', first, true);
+    splash.querySelector('.hw-sp-enter').addEventListener('click', function () { enter(true); });
+    splash.querySelector('.hw-sp-silent').addEventListener('click', function () { enter(false); });
   }
 })();
