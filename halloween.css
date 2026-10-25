@@ -37,6 +37,16 @@ header.scrolled .hw-ch{transform:scaleY(calc(1 + (var(--s,1) - 1) * .45));animat
 @keyframes hw-melt{0%,100%{transform:scaleY(var(--s,1))}50%{transform:scaleY(calc(var(--s,1) * 1.14))}}
 @media(max-width:700px){.logo{font-size:25px;}}
 
+/* 배경음악 버튼 */
+#hw-music{
+  position:fixed;right:14px;bottom:92px;z-index:150;display:flex;align-items:center;gap:6px;
+  padding:9px 14px;border-radius:999px;background:rgba(26,13,46,0.94);color:#fff;
+  border:1.5px solid #FF7A1A;font-size:13px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,0.45);
+}
+#hw-music.off{animation:hw-pulse 2.2s ease-in-out infinite;}
+@keyframes hw-pulse{0%,100%{box-shadow:0 6px 18px rgba(0,0,0,0.45),0 0 0 0 rgba(255,122,26,.5)}50%{box-shadow:0 6px 18px rgba(0,0,0,0.45),0 0 0 9px rgba(255,122,26,0)}}
+@media(min-width:960px){#hw-music{bottom:24px;}}
+
 /* decorations (halloween.js 가 추가) */
 #hw-layer{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50;}
 .hw-bat{position:absolute;left:0;font-size:26px;opacity:0;animation:hw-fly linear infinite;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5));}

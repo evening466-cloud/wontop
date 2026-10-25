@@ -80,3 +80,146 @@
     el.textContent = el.textContent.replace('🍃', '🎃');
   });
 })();
+
+// 호러 배경음악 — 음원 파일 없이 브라우저가 직접 합성(저작권 문제 없음).
+// 브라우저 정책상 첫 클릭/터치 때 시작되고, 우측 하단 버튼으로 끄고 켤 수 있습니다.
+(function () {
+  var AC = window.AudioContext || window.webkitAudioContext;
+  if (!AC) return;
+
+  var btn = document.createElement('button');
+  btn.id = 'hw-music';
+  btn.type = 'button';
+  btn.setAttribute('aria-label', '호러 배경음악 켜기/끄기');
+  document.body.appendChild(btn);
+
+  var pref = null;
+  try { pref = localStorage.getItem('hw-music'); } catch (e) {}
+  var ctx = null, master = null, dry = null, wet = null, send = null, timers = [], playing = false, nodes = [];
+
+  function render() {
+    btn.className = playing ? 'on' : 'off';
+    btn.innerHTML = '<span>' + (playing ? '🔊' : '🔇') + '</span><b>' + (playing ? '음악 끄기' : '🎃 음악 켜기') + '</b>';
+  }
+
+  function impulse(seconds) {
+    var len = ctx.sampleRate * seconds, buf = ctx.createBuffer(2, len, ctx.sampleRate);
+    for (var c = 0; c < 2; c++) {
+      var d = buf.getChannelData(c);
+      for (var i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 3);
+    }
+    return buf;
+  }
+
+  function osc(type, freq, dest, gain) {
+    var o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = type; o.frequency.value = freq; g.gain.value = gain;
+    o.connect(g); g.connect(dest); o.start();
+    nodes.push(o);
+    return { o: o, g: g };
+  }
+
+  function build() {
+    ctx = new AC();
+    master = ctx.createGain(); master.gain.value = 0; master.connect(ctx.destination);
+    dry = ctx.createGain(); dry.gain.value = 0.75; dry.connect(master);
+    var verb = ctx.createConvolver(); verb.buffer = impulse(3.5);
+    wet = ctx.createGain(); wet.gain.value = 0.7; verb.connect(wet); wet.connect(master);
+    send = ctx.createGain(); send.gain.value = 1; send.connect(verb);
+
+    // 낮은 드론: 약간 어긋난 톱니파 둘 + 서브 베이스, 느리게 출렁이는 필터
+    var lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 200; lp.Q.value = 3;
+    lp.connect(dry); lp.connect(send);
+    osc('sawtooth', 55, lp, 0.1); osc('sawtooth', 58.3, lp, 0.1); osc('sine', 27.5, lp, 0.25);
+    var lfo = ctx.createOscillator(), lfoG = ctx.createGain();
+    lfo.frequency.value = 0.07; lfoG.gain.value = 110; lfo.connect(lfoG); lfoG.connect(lp.frequency); lfo.start();
+    nodes.push(lfo);
+
+    // 반음으로 부딪히는 불안한 패드
+    var pad = ctx.createGain(); pad.gain.value = 0.05; pad.connect(dry); pad.connect(send);
+    osc('sine', 220, pad, 1); osc('sine', 233.08, pad, 1);
+    var trem = ctx.createOscillator(), tremG = ctx.createGain();
+    trem.frequency.value = 0.13; tremG.gain.value = 0.04; trem.connect(tremG); tremG.connect(pad.gain); trem.start();
+    nodes.push(trem);
+  }
+
+  var scale = [220, 233.08, 261.63, 311.13, 329.63, 349.23, 440, 466.16, 659.25];
+
+  function bell(freq, dur, vol) {
+    var t = ctx.currentTime, g = ctx.createGain();
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(vol, t + 0.015);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    var a = ctx.createOscillator(), b = ctx.createOscillator(), bg = ctx.createGain();
+    a.type = 'triangle'; a.frequency.value = freq;
+    b.type = 'sine'; b.frequency.value = freq * 2.76; bg.gain.value = 0.25;
+    a.connect(g); b.connect(bg); bg.connect(g);
+    g.connect(dry); g.connect(send);
+    a.start(t); b.start(t); a.stop(t + dur + 0.1); b.stop(t + dur + 0.1);
+  }
+
+  function thump() {
+    var t = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+    o.frequency.setValueAtTime(70, t); o.frequency.exponentialRampToValueAtTime(38, t + 0.25);
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.35, t + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 0.4);
+    o.connect(g); g.connect(master); o.start(t); o.stop(t + 0.5);
+  }
+
+  function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
+
+  function melody() {
+    if (!playing) return;
+    var f = scale[Math.floor(Math.random() * scale.length)];
+    bell(f, 3.2, 0.07);
+    if (Math.random() < 0.3) later(function () { if (playing) bell(f * 1.0595, 2.6, 0.04); }, 350);
+    if (Math.random() < 0.15) bell(110, 5, 0.12);
+    later(melody, 1500 + Math.random() * 2600);
+  }
+
+  function beat() {
+    if (!playing) return;
+    thump(); later(thump, 330);
+    later(beat, 6500 + Math.random() * 4000);
+  }
+
+  function start() {
+    if (playing) return;
+    if (!ctx) { build(); }
+    ctx.resume();
+    playing = true;
+    master.gain.cancelScheduledValues(ctx.currentTime);
+    master.gain.setTargetAtTime(0.5, ctx.currentTime, 1.5);
+    later(melody, 800); later(beat, 4000);
+    try { localStorage.setItem('hw-music', 'on'); } catch (e) {}
+    render();
+  }
+
+  function stop() {
+    if (!playing) return;
+    playing = false;
+    timers.forEach(clearTimeout); timers = [];
+    master.gain.cancelScheduledValues(ctx.currentTime);
+    master.gain.setTargetAtTime(0, ctx.currentTime, 0.4);
+    setTimeout(function () { if (!playing && ctx) ctx.suspend(); }, 1800);
+    try { localStorage.setItem('hw-music', 'off'); } catch (e) {}
+    render();
+  }
+
+  btn.addEventListener('click', function () { playing ? stop() : start(); });
+  document.addEventListener('visibilitychange', function () {
+    if (!ctx) return;
+    if (document.hidden) ctx.suspend(); else if (playing) ctx.resume();
+  });
+
+  render();
+  if (pref !== 'off') {
+    var first = function (e) {
+      document.removeEventListener('pointerdown', first, true);
+      document.removeEventListener('keydown', first, true);
+      if (!btn.contains(e.target)) start();
+    };
+    document.addEventListener('pointerdown', first, true);
+    document.addEventListener('keydown', first, true);
+  }
+})();
