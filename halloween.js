@@ -3,9 +3,9 @@
   var layer = document.createElement('div');
   layer.id = 'hw-layer';
   var bats = [
-    { top: '14%', dur: 16, delay: 0 },
-    { top: '34%', dur: 21, delay: 6 },
-    { top: '58%', dur: 18, delay: 11 }
+    { top: '12%', dur: 5.3, delay: 0 },
+    { top: '38%', dur: 7, delay: 2 },
+    { top: '62%', dur: 6, delay: 3.7 }
   ];
   bats.forEach(function (b) {
     var el = document.createElement('span');

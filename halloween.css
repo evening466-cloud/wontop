@@ -49,18 +49,19 @@ header.scrolled .hw-ch{transform:scaleY(calc(1 + (var(--s,1) - 1) * .45));animat
 
 /* decorations (halloween.js 가 추가) */
 #hw-layer{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50;}
-.hw-bat{position:absolute;left:0;font-size:26px;opacity:0;animation:hw-fly linear infinite;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5));}
+.hw-bat{position:absolute;left:0;font-size:78px;line-height:1;opacity:0;animation:hw-fly linear infinite;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.55));}
+@media(max-width:700px){.hw-bat{font-size:56px}}
 .hw-float{position:absolute;font-size:34px;z-index:1;pointer-events:none;animation:hw-bob 4s ease-in-out infinite;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.45));}
 .hw-small{font-size:30px;opacity:.92;}
 @media(max-width:700px){.hw-small{font-size:22px}}
 @keyframes hw-fly{
-  0%{transform:translate(-80px,0) scale(.8);opacity:0}
+  0%{transform:translate(-200px,0) scale(.8);opacity:0}
   8%{opacity:.95}
-  25%{transform:translate(25vw,-28px) scale(1)}
-  50%{transform:translate(52vw,22px) scale(.9)}
-  75%{transform:translate(78vw,-24px) scale(1)}
+  25%{transform:translate(25vw,-70px) scale(1)}
+  50%{transform:translate(52vw,55px) scale(.9)}
+  75%{transform:translate(78vw,-60px) scale(1)}
   92%{opacity:.95}
-  100%{transform:translate(112vw,0) scale(.8);opacity:0}
+  100%{transform:translate(115vw,0) scale(.8);opacity:0}
 }
 @keyframes hw-bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-12px) rotate(4deg)}}
 @keyframes hw-flicker{0%,100%{opacity:.5}45%{opacity:.35}60%{opacity:.55}}
