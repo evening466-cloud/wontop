@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>원탑관광농원&amp;원탑캠핑장</title>
+<meta name="description" content="자연 속 힐링 캠핑, 원탑캠핑장과 건강한 제철 농산물을 만나는 원탑관광농원. 오토캠핑·렌탈존·카라반존 운영, 계절별 농산물 직거래.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="원탑관광농원&amp;원탑캠핑장">
+<meta property="og:description" content="자연 속 힐링 캠핑과 건강한 제철 농산물, 원탑관광농원&amp;원탑캠핑장에서 만나보세요.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --forest:#2F5233;
+  --forest-2:#3E6B45;
+  --forest-light:#5C8A5A;
+  --wood:#8B5E3C;
+  --wood-light:#C89666;
+  --sun:#E8A33D;
+  --sun-light:#F4C669;
+  --cream:#FAF6EC;
+  --cream-2:#FFFFFF;
+  --ink:#2B2418;
+  --ink-2:#4A4034;
+  --steel:#6B6255;
+  --line:rgba(47,82,51,0.14);
+  --line-soft:rgba(43,36,24,0.08);
+  --shadow:0 8px 24px rgba(43,36,24,0.08);
+  --shadow-lg:0 16px 40px rgba(43,36,24,0.14);
+  --radius:16px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Jua','Noto Sans KR',sans-serif;font-weight:400;margin:0;color:var(--forest);}
+p{margin:0;}
+a{color:inherit;text-decoration:none;}
+button{cursor:pointer;font-family:inherit;border:none;background:none;}
+ul{margin:0;padding:0;list-style:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+.section{padding:72px 0;}
+.section-alt{background:var(--cream-2);}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--sun);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--sun);border-radius:2px;}
+.section-title{font-size:30px;color:var(--forest);margin-bottom:12px;}
+.section-desc{font-size:15px;color:var(--steel);max-width:560px;margin-bottom:36px;}
+.section-head{text-align:center;}
+.section-head .section-desc{margin-left:auto;margin-right:auto;}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 26px;border-radius:999px;font-size:15px;font-weight:700;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn:active{transform:scale(0.97);}
+.btn-primary{background:var(--sun);color:#3a2708;box-shadow:0 10px 24px rgba(232,163,61,0.35);}
+.btn-outline{background:rgba(255,255,255,0.12);color:#fff;border:1.5px solid rgba(255,255,255,0.55);}
+.btn-outline-dark{background:transparent;color:var(--forest);border:1.5px solid var(--forest-light);}
+.btn-forest{background:var(--forest);color:#fff;box-shadow:0 10px 24px rgba(47,82,51,0.3);}
+.tag{display:inline-block;padding:5px 12px;border-radius:999px;background:rgba(47,82,51,0.08);color:var(--forest);font-size:12px;font-weight:700;}
+
+/* ---------- header ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,246,236,0.0);
+  transition:background .25s ease, box-shadow .25s ease, backdrop-filter .25s ease;
+  padding:16px 0;
+}
+header.scrolled{background:rgba(250,246,236,0.92);backdrop-filter:blur(10px);box-shadow:0 4px 20px rgba(43,36,24,0.08);padding:10px 0;}
+.header-inner{display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:8px;font-family:'Jua';font-size:19px;color:var(--cream-2);letter-spacing:-0.3px;transition:color .25s ease;}
+.logo .logo-mark{font-size:24px;}
+header.scrolled .logo{color:var(--forest);}
+.nav-desktop{display:none;align-items:center;gap:6px;}
+.nav-desktop a{padding:10px 14px;border-radius:999px;font-size:14.5px;font-weight:700;color:var(--cream-2);transition:background .2s ease, color .2s ease;}
+header.scrolled .nav-desktop a{color:var(--ink-2);}
+.nav-desktop a:hover{background:rgba(255,255,255,0.15);}
+header.scrolled .nav-desktop a:hover{background:rgba(47,82,51,0.08);color:var(--forest);}
+.nav-cta{display:none;}
+.nav-badge{display:none;white-space:nowrap;}
+.header-inner .nav-badge{margin-bottom:0;}
+header.scrolled .nav-badge{background:rgba(47,82,51,0.08);border-color:rgba(47,82,51,0.2);color:var(--forest);}
+.menu-btn{
+  width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,0.15);color:#fff;transition:background .25s ease,color .25s ease;flex:0 0 auto;
+}
+header.scrolled .menu-btn{background:rgba(47,82,51,0.08);color:var(--forest);}
+.menu-btn svg{width:22px;height:22px;}
+
+.nav-drawer{
+  position:fixed;inset:0;z-index:200;visibility:hidden;
+}
+.nav-drawer .backdrop{position:absolute;inset:0;background:rgba(20,16,8,0.45);opacity:0;transition:opacity .25s ease;}
+.nav-drawer .panel{
+  position:absolute;top:0;right:0;bottom:0;width:78%;max-width:320px;background:var(--cream-2);
+  box-shadow:-10px 0 30px rgba(0,0,0,0.15);transform:translateX(100%);transition:transform .3s ease;
+  padding:26px 22px;display:flex;flex-direction:column;gap:4px;
+}
+.nav-drawer.open{visibility:visible;}
+.nav-drawer.open .backdrop{opacity:1;}
+.nav-drawer.open .panel{transform:translateX(0);}
+.nav-drawer-close{align-self:flex-end;width:38px;height:38px;border-radius:10px;background:var(--cream);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.nav-drawer-close svg{width:18px;height:18px;stroke:var(--ink);}
+.nav-drawer a{padding:16px 10px;font-size:17px;font-weight:700;color:var(--ink-2);border-bottom:1px solid var(--line-soft);}
+.nav-drawer .drawer-cta{margin-top:20px;}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;
+  background:linear-gradient(165deg,#1f3d24 0%,var(--forest) 45%,var(--forest-2) 100%);
+  overflow:hidden;padding-top:96px;padding-bottom:150px;
+}
+.hero::before,.hero::after{
+  content:"";position:absolute;border-radius:50%;filter:blur(10px);opacity:0.35;
+}
+.hero::before{width:420px;height:420px;background:radial-gradient(circle,var(--sun) 0%,transparent 70%);top:-140px;right:-120px;opacity:0.5;}
+.hero::after{width:520px;height:520px;background:radial-gradient(circle,var(--forest-light) 0%,transparent 70%);bottom:-220px;left:-160px;}
+.hero-hill{position:absolute;left:0;right:0;bottom:-2px;height:70px;background:var(--cream);border-radius:50% 50% 0 0/60px 60px 0 0;transform:scale(1.4);z-index:1;pointer-events:none;}
+.hero-inner{position:relative;z-index:2;width:100%;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;
+  background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:var(--sun-light);
+  font-size:13px;font-weight:700;margin-bottom:22px;
+}
+.hero p.lead{font-size:16px;color:rgba(255,255,255,0.9);margin:0;}
+.hero-map-wrap{position:relative;}
+.hero-map{width:100%;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,0.35);display:block;}
+.zone-e-tag{
+  position:absolute;transform:translate(-50%,-50%);
+  background:rgba(232,102,61,0.92);color:#fff;font-size:11px;font-weight:800;
+  padding:4px 10px;border-radius:999px;white-space:nowrap;
+  box-shadow:0 4px 12px rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.5);
+  letter-spacing:-0.2px;
+}
+.zone-e-tag-top{left:81%;top:38%;}
+.zone-e-tag-bottom{left:77%;top:61%;}
+.hero-notice{
+  display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:#ffe3b0;
+  background:rgba(232,102,61,0.16);border:1px solid rgba(232,163,61,0.35);border-radius:12px;
+  padding:12px 16px;margin-top:16px;max-width:460px;
+}
+.hero-side{margin-top:32px;}
+.hero-quote{position:relative;}
+.hero-overview-wrap{margin-bottom:20px;}
+.hero-overview{width:100%;height:200px;object-fit:cover;border-radius:16px;display:block;box-shadow:0 20px 50px rgba(0,0,0,0.25);}
+.hero-photos{position:relative;border-radius:14px;overflow:hidden;margin-bottom:26px;}
+.hero-photos video{width:100%;height:330px;object-fit:cover;display:block;}
+.hero-quote .lead{font-family:'Jua';font-size:19px;line-height:1.55;letter-spacing:-0.2px;}
+
+/* ---------- quick info strip ---------- */
+.quick-strip{background:var(--cream-2);border-bottom:1px solid var(--line-soft);}
+.quick-strip .wrap{display:grid;grid-template-columns:1fr;gap:0;padding:0;}
+.quick-item{display:flex;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid var(--line-soft);}
+.quick-item:last-child{border-bottom:none;}
+.quick-item .qi-icon{font-size:20px;flex:0 0 auto;width:42px;height:42px;border-radius:12px;background:rgba(47,82,51,0.08);display:flex;align-items:center;justify-content:center;}
+.quick-item .qi-label{font-size:11px;color:var(--steel);font-weight:700;}
+.quick-item .qi-value{font-size:14.5px;font-weight:700;color:var(--ink);}
+.quick-item .qi-note{font-size:11.5px;color:var(--steel);font-weight:400;margin-top:2px;}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+.about-card{
+  background:var(--cream-2);border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow);
+  border:1px solid var(--line-soft);position:relative;overflow:hidden;
+}
+.about-card .ac-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:18px;}
+.about-card.forest .ac-icon{background:rgba(47,82,51,0.1);}
+.about-card.wood .ac-icon{background:rgba(139,94,60,0.12);}
+.about-card h3{font-size:21px;margin-bottom:10px;}
+.about-card p{font-size:14.5px;color:var(--steel);margin-bottom:16px;}
+.about-card ul{display:flex;flex-direction:column;gap:8px;}
+.about-card li{font-size:13.5px;color:var(--ink-2);display:flex;align-items:center;gap:8px;}
+.about-card li::before{content:"✓";color:var(--forest-light);font-weight:900;}
+
+/* ---------- cards grid (camp sites, farm produce) ---------- */
+.card-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+.site-card{
+  background:var(--cream-2);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+  border:1px solid var(--line-soft);transition:transform .2s ease,box-shadow .2s ease;
+}
+.site-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.site-thumb{
+  height:150px;display:flex;align-items:center;justify-content:center;font-size:44px;position:relative;
+}
+.site-thumb-photo{background-size:cover;background-position:center;}
+.site-thumb .thumb-label{position:absolute;bottom:10px;left:12px;font-size:11px;font-weight:700;color:rgba(255,255,255,0.85);background:rgba(0,0,0,0.22);padding:3px 10px;border-radius:999px;}
+.site-body{padding:20px;}
+.site-body h4{font-size:18px;margin-bottom:6px;}
+.site-body .site-desc{font-size:13.5px;color:var(--steel);margin-bottom:14px;}
+.site-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.site-meta span{font-size:11.5px;font-weight:700;color:var(--forest);background:rgba(47,82,51,0.08);padding:4px 10px;border-radius:999px;}
+.site-price{display:flex;flex-direction:column;gap:6px;border-top:1px dashed var(--line-soft);padding-top:14px;}
+.site-price .price-row{display:flex;align-items:baseline;justify-content:space-between;}
+.site-price .price-label{font-size:12px;color:var(--steel);}
+.site-price .price-value{font-size:17px;font-weight:900;color:var(--wood);}
+.site-price .price-row-peak .price-value{font-size:14px;font-weight:700;color:var(--steel);}
+.site-card-clickable{cursor:pointer;}
+.site-card-hint{margin-top:12px;font-size:12.5px;font-weight:700;color:var(--forest-light);text-align:right;}
+
+/* ---------- facility grid ---------- */
+.facility-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.facility-item{
+  background:var(--cream-2);border:1px solid var(--line-soft);border-radius:14px;padding:18px 12px;
+  text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.facility-item[data-photo],.facility-item[data-photos]{cursor:pointer;}
+.facility-item .f-icon{font-size:26px;}
+.facility-item .f-label{font-size:12.5px;font-weight:700;color:var(--ink-2);}
+
+/* ---------- price table ---------- */
+.table-scroll{overflow-x:auto;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--line-soft);}
+table.price-table{width:100%;border-collapse:collapse;min-width:560px;background:var(--cream-2);}
+table.price-table th,table.price-table td{padding:14px 16px;text-align:center;font-size:13.5px;border-bottom:1px solid var(--line-soft);white-space:nowrap;}
+table.price-table thead th{background:var(--forest);color:#fff;font-weight:700;font-size:13px;}
+table.price-table tbody tr:last-child td{border-bottom:none;}
+table.price-table tbody tr:nth-child(even){background:rgba(47,82,51,0.03);}
+table.price-table td.site-name{text-align:left;font-weight:700;color:var(--ink);}
+table.price-table td a{color:var(--forest);font-weight:700;text-decoration:none;}
+table.price-table td a:hover{text-decoration:underline;}
+.price-note{font-size:12.5px;color:var(--steel);margin-top:12px;display:flex;gap:8px;align-items:flex-start;}
+
+/* ---------- usage rules ---------- */
+.rules-grid{display:grid;grid-template-columns:1fr;gap:14px;}
+.rule-card{display:flex;gap:14px;background:var(--cream-2);border:1px solid var(--line-soft);border-radius:14px;padding:18px;}
+.rule-card .r-num{flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:var(--forest);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;font-family:'Jua';}
+.rule-card h5{font-size:14.5px;color:var(--ink);margin-bottom:4px;}
+.rule-card p{font-size:13px;color:var(--steel);}
+
+/* ---------- season produce ---------- */
+.season-tabs{display:flex;gap:8px;overflow-x:auto;margin-bottom:24px;padding-bottom:4px;}
+.season-tab{
+  flex:0 0 auto;padding:10px 18px;border-radius:999px;font-size:13.5px;font-weight:700;
+  background:var(--cream-2);border:1.5px solid var(--line-soft);color:var(--steel);transition:all .2s ease;
+}
+.season-tab.active{background:var(--forest);border-color:var(--forest);color:#fff;}
+.produce-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.produce-panel{display:none;}
+.produce-panel.active{display:grid;}
+.produce-card{background:var(--cream-2);border:1px solid var(--line-soft);border-radius:14px;overflow:hidden;text-align:center;box-shadow:var(--shadow);}
+.produce-photo{position:relative;width:100%;height:0;padding-top:100%;}
+.produce-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+.produce-card .p-emoji{
+  position:absolute;top:8px;left:8px;margin:0;font-size:18px;width:32px;height:32px;border-radius:10px;
+  background:rgba(255,255,255,0.88);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.18);
+}
+.produce-card .p-body{padding:14px;}
+.produce-card h5{font-size:14.5px;margin-bottom:4px;color:var(--ink);}
+.produce-card p{font-size:12px;color:var(--steel);}
+
+/* ---------- experience & purchase ---------- */
+.two-col{display:grid;grid-template-columns:1fr;gap:20px;}
+.info-panel{background:var(--cream-2);border:1px solid var(--line-soft);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);}
+.info-panel h4{font-size:18px;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.info-panel .steps{display:flex;flex-direction:column;gap:12px;}
+.info-panel .step{display:flex;gap:12px;align-items:flex-start;}
+.info-panel .step .s-dot{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:rgba(139,94,60,0.12);color:var(--wood);font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;font-family:'Jua';}
+.info-panel .step p{font-size:13.5px;color:var(--ink-2);}
+.info-panel .step .s-sub{font-size:12px;color:var(--steel);margin-top:2px;}
+
+/* ---------- gallery ---------- */
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.gallery-item{
+  position:relative;overflow:hidden;border-radius:14px;
+  width:100%;height:0;padding-top:100%;
+}
+.gallery-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+.gallery-item-icon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:32px;}
+.gallery-item .g-label{position:absolute;bottom:8px;left:8px;right:8px;font-size:11px;font-weight:700;color:#fff;background:rgba(0,0,0,0.28);padding:4px 8px;border-radius:8px;text-align:center;}
+.gallery-more-btn{
+  margin:16px auto 0;display:flex;align-items:center;gap:6px;justify-content:center;
+  padding:12px 24px;border-radius:999px;background:var(--cream-2);border:1.5px solid var(--line-soft);
+  font-size:13.5px;font-weight:700;color:var(--forest);
+}
+.gallery-more-btn svg{width:15px;height:15px;stroke:var(--forest);}
+.gallery-modal-panel{max-width:760px;}
+.gallery-modal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-height:62vh;overflow-y:auto;padding-right:2px;}
+@media(min-width:640px){
+  .gallery-modal-grid{grid-template-columns:repeat(3,1fr);}
+}
+.gallery-item.g2{background:linear-gradient(135deg,#C89666,#8B5E3C);}
+.gallery-item.g3{background:linear-gradient(135deg,#E8A33D,#F4C669);}
+.gallery-item.g4{background:linear-gradient(135deg,#5C8A5A,#2F5233);}
+.gallery-item.g5{background:linear-gradient(135deg,#8B5E3C,#C89666);}
+
+/* ---------- location ---------- */
+.location-wrap{display:grid;grid-template-columns:1fr;gap:20px;}
+.map-box{
+  background:linear-gradient(135deg,rgba(47,82,51,0.08),rgba(232,163,61,0.1));
+  border:1.5px dashed var(--line);border-radius:var(--radius);min-height:260px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:24px;
+}
+.map-box .map-emoji{font-size:40px;}
+.map-box p{font-size:13px;color:var(--steel);max-width:280px;}
+.addr-row{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--cream-2);
+  border:1px solid var(--line-soft);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);
+}
+.addr-row .addr-text{font-size:14.5px;font-weight:700;color:var(--ink);}
+.addr-row .addr-sub{font-size:12px;color:var(--steel);margin-top:2px;}
+.copy-btn{flex:0 0 auto;padding:9px 16px;border-radius:999px;background:var(--forest);color:#fff;font-size:12.5px;font-weight:700;}
+.access-grid{display:grid;grid-template-columns:1fr;gap:14px;}
+.access-card{background:var(--cream-2);border:1px solid var(--line-soft);border-radius:14px;padding:18px;display:flex;gap:14px;}
+.access-card .a-icon{font-size:22px;flex:0 0 auto;}
+.access-card h5{font-size:14px;margin-bottom:4px;color:var(--ink);}
+.access-card p{font-size:13px;color:var(--steel);}
+
+/* ---------- contact / reserve ---------- */
+.contact-section{background:linear-gradient(165deg,var(--forest) 0%,#24422a 100%);color:#fff;position:relative;overflow:hidden;}
+.contact-section::before{content:"";position:absolute;width:400px;height:400px;background:radial-gradient(circle,var(--sun) 0%,transparent 70%);opacity:0.25;top:-100px;right:-100px;border-radius:50%;}
+.contact-section .section-title,.contact-section h3{color:#fff;}
+.contact-section .section-desc{color:rgba(255,255,255,0.75);}
+.contact-cards{display:grid;grid-template-columns:1fr;gap:14px;position:relative;z-index:2;}
+.contact-card{
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);border-radius:16px;padding:22px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.contact-card .cc-icon{width:48px;height:48px;border-radius:14px;background:rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;font-size:22px;}
+.contact-card h5{font-size:16px;color:#fff;}
+.contact-card p{font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:4px;}
+.hours-box{
+  margin-top:36px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:14px;
+  padding:18px 20px;display:flex;flex-wrap:wrap;gap:10px 24px;position:relative;z-index:2;
+}
+.hours-box .h-item{display:flex;align-items:center;gap:8px;font-size:13.5px;color:rgba(255,255,255,0.85);}
+.hours-box .h-item b{color:var(--sun-light);}
+
+/* ---------- FAQ ---------- */
+.faq-list{display:flex;flex-direction:column;gap:10px;}
+.faq-item{background:var(--cream-2);border:1px solid var(--line-soft);border-radius:14px;overflow:hidden;}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;font-size:14.5px;font-weight:700;color:var(--ink);}
+.faq-q .faq-plus{font-size:18px;color:var(--forest-light);transition:transform .25s ease;flex:0 0 auto;margin-left:12px;}
+.faq-item.open .faq-plus{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+.faq-a p{padding:0 20px 18px;font-size:13.5px;color:var(--steel);}
+
+/* ---------- footer ---------- */
+footer{background:#1c2f1f;color:rgba(255,255,255,0.65);padding:48px 0 100px;}
+.footer-top{display:flex;flex-direction:column;gap:18px;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.1);}
+.footer-logo{display:flex;align-items:center;gap:8px;font-family:'Jua';font-size:19px;color:#fff;}
+.footer-info{font-size:12.5px;line-height:2;}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap;}
+.footer-links a{font-size:12.5px;color:rgba(255,255,255,0.6);}
+.footer-bottom{font-size:11.5px;color:rgba(255,255,255,0.4);}
+
+/* ---------- floating action bar ---------- */
+.floating-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:90;
+  background:var(--cream-2);border-top:1px solid var(--line-soft);box-shadow:0 -8px 24px rgba(43,36,24,0.08);
+  display:flex;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+}
+.floating-bar .btn{flex:1;padding:13px 10px;font-size:14px;}
+
+/* ---------- rental modal ---------- */
+.rental-modal{position:fixed;inset:0;z-index:300;visibility:hidden;display:flex;align-items:flex-end;justify-content:center;}
+.rental-modal .rental-modal-backdrop{position:absolute;inset:0;background:rgba(20,16,8,0.55);opacity:0;transition:opacity .25s ease;}
+.rental-modal-panel{
+  position:relative;background:var(--cream-2);width:100%;max-width:560px;max-height:86vh;
+  border-radius:24px 24px 0 0;padding:24px 20px calc(20px + env(safe-area-inset-bottom));
+  transform:translateY(100%);transition:transform .3s ease;overflow-y:auto;
+}
+.rental-modal.open{visibility:visible;}
+.rental-modal.open .rental-modal-backdrop{opacity:1;}
+.rental-modal.open .rental-modal-panel{transform:translateY(0);}
+.rental-modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.rental-modal-header h3{font-size:20px;}
+.rental-modal-close{width:36px;height:36px;border-radius:10px;background:var(--cream);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.rental-modal-close svg{width:16px;height:16px;stroke:var(--ink);}
+.rental-modal-sub{font-size:13px;color:var(--steel);margin-bottom:18px;}
+.rental-modal-body{display:flex;flex-direction:column;gap:12px;}
+.rental-item{display:flex;align-items:center;gap:14px;background:var(--cream);border:1px solid var(--line-soft);border-radius:14px;padding:12px;}
+.rental-photo{flex:0 0 auto;width:64px;height:64px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px;}
+.rental-photo[data-photo]{cursor:pointer;}
+.rental-info{flex:1;min-width:0;}
+.photo-zoom-preview{
+  position:fixed;z-index:2000;display:flex;gap:8px;
+  opacity:0;transform:scale(0.94);
+  transition:opacity .16s ease,transform .16s ease;pointer-events:none;
+}
+.photo-zoom-preview.show{opacity:1;transform:scale(1);}
+.photo-zoom-preview img{
+  width:200px;height:260px;border-radius:16px;overflow:hidden;object-fit:cover;display:block;
+  box-shadow:0 24px 60px rgba(0,0,0,0.45);background:#000;
+}
+.rental-info h5{font-size:14.5px;color:var(--ink);margin-bottom:3px;}
+.rental-info p{font-size:12px;color:var(--steel);}
+.rental-locate-btn{
+  flex:0 0 auto;font-size:12px;font-weight:700;color:var(--forest);background:rgba(47,82,51,0.1);
+  padding:9px 12px;border-radius:999px;white-space:nowrap;
+}
+.rental-modal-note{font-size:11.5px;color:var(--steel-light);margin-top:16px;text-align:center;}
+@media(min-width:640px){
+  .rental-modal{align-items:center;}
+  .rental-modal-panel{border-radius:24px;transform:translateY(20px) scale(0.97);opacity:0;}
+  .rental-modal.open .rental-modal-panel{transform:translateY(0) scale(1);opacity:1;}
+}
+.zone-highlight{
+  position:absolute;border:3px solid var(--sun);border-radius:16px;background:rgba(232,163,61,0.18);
+  opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:3;
+  box-shadow:0 0 0 6px rgba(232,163,61,0.15);
+}
+.zone-highlight.show{opacity:1;animation:zoneFlash 1.4s ease-in-out 2;}
+@keyframes zoneFlash{0%,100%{opacity:0.4;}50%{opacity:1;}}
+
+/* ---------- scroll reveal ---------- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ---------- responsive ---------- */
+@media(min-width:700px){
+  .about-grid{grid-template-columns:1fr 1fr;}
+  .card-grid{grid-template-columns:repeat(2,1fr);}
+  .facility-grid{grid-template-columns:repeat(4,1fr);}
+  .produce-grid{grid-template-columns:repeat(4,1fr);}
+  .two-col{grid-template-columns:1fr 1fr;}
+  .gallery-grid{grid-template-columns:repeat(4,1fr);}
+  .location-wrap{grid-template-columns:1.1fr 1fr;}
+  .contact-cards{grid-template-columns:repeat(3,1fr);}
+  .quick-strip .wrap{grid-template-columns:repeat(3,1fr);}
+  .quick-item{border-bottom:none;border-right:1px solid var(--line-soft);}
+  .quick-item:last-child{border-right:none;}
+  .rules-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(min-width:960px){
+  .nav-desktop{display:flex;}
+  .nav-badge{display:inline-flex;}
+  .menu-btn{display:none;}
+  .floating-bar{display:none;}
+  .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+  .hero-side{margin-top:0;}
+  .hero-overview{height:280px;}
+  .hero-overview-wrap{margin-bottom:32px;}
+  .hero-photos{aspect-ratio:1170/1345;margin-bottom:16px;}
+  .hero-photos video{height:100%;}
+  .card-grid{grid-template-columns:repeat(4,1fr);}
+  footer{padding-bottom:48px;}
+}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="#home" class="logo"><span class="logo-mark">⛺</span>원탑관광농원&amp;원탑캠핑장</a>
+    <nav class="nav-desktop">
+      <a href="#about">소개</a>
+      <a href="#camp">캠핑장</a>
+      <a href="#farm">농원</a>
+      <a href="#gallery">갤러리</a>
+      <a href="#location">오시는 길</a>
+      <a href="#contact">예약문의</a>
+    </nav>
+    <span class="hero-badge nav-badge">🍃 사계절 자연 속 힐링 공간</span>
+    <button class="menu-btn" id="menuBtn" aria-label="메뉴 열기">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="nav-drawer" id="navDrawer">
+  <div class="backdrop" id="drawerBackdrop"></div>
+  <div class="panel">
+    <button class="nav-drawer-close" id="drawerClose">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </button>
+    <a href="#about" class="drawer-link">소개</a>
+    <a href="#camp" class="drawer-link">캠핑장 안내</a>
+    <a href="#farm" class="drawer-link">농원 안내</a>
+    <a href="#gallery" class="drawer-link">갤러리</a>
+    <a href="#location" class="drawer-link">오시는 길</a>
+    <a href="#contact" class="drawer-link">예약문의</a>
+    <a href="tel:010-5487-4319" class="btn btn-forest drawer-cta">📞 전화로 예약하기</a>
+  </div>
+</div>
+
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-overview-wrap">
+      <img class="hero-overview" src="images/campsite-overview.png" alt="원탑캠핑장 전경">
+    </div>
+    <div class="hero-inner">
+      <div class="hero-main">
+        <div class="hero-map-wrap">
+          <img class="hero-map" src="images/campsite-map.png" alt="화양원탑 캠핑장 사이트 배치도">
+          <span class="zone-e-tag zone-e-tag-top">🚧 리뉴얼중</span>
+          <span class="zone-e-tag zone-e-tag-bottom">🚧 리뉴얼중</span>
+          <div class="zone-highlight" id="rentalZoneHighlight" style="left:10%;top:7%;width:26%;height:15%;"></div>
+          <div class="zone-highlight" id="zoneAHighlight" style="left:18%;top:30%;width:70%;height:20%;"></div>
+          <div class="zone-highlight" id="caravanZoneHighlight" style="left:24%;top:79%;width:50%;height:19%;"></div>
+          <div class="zone-highlight" id="zoneCHighlight" style="left:24%;top:79%;width:50%;height:19%;"></div>
+        </div>
+        <p class="hero-notice">⚠️ 현재 캠핑존 E구역은 공사로 인하여 예약이 불가합니다.</p>
+      </div>
+      <div class="hero-side">
+        <div class="hero-quote">
+          <div class="hero-photos">
+            <video class="hero-video" src="videos/hero-stream.mp4" muted loop playsinline preload="metadata"></video>
+          </div>
+          <p class="lead">숲과 계곡을 곁에 둔 캠핑장에서 하룻밤 힐링하고, 바로 옆 농원에서 갓 수확한 제철 농산물까지 — 온 가족이 함께 즐기는 자연 여행지입니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-hill"></div>
+</section>
+
+<div class="quick-strip">
+  <div class="wrap">
+    <div class="quick-item">
+      <div class="qi-icon">📍</div>
+      <div><div class="qi-label">주소</div><div class="qi-value">충북 괴산군 청천면 화양리 175</div></div>
+    </div>
+    <div class="quick-item">
+      <div class="qi-icon">🕒</div>
+      <div><div class="qi-label">입실 / 퇴실</div><div class="qi-value">입실 14:00 · 퇴실 14:00</div></div>
+    </div>
+    <div class="quick-item">
+      <div class="qi-icon">🚗</div>
+      <div><div class="qi-label">주차</div><div class="qi-value">캠핑존 주차가능</div><div class="qi-note">캠핑존당 차량 1대, 추가 차량은 별도 주차장에 주차</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">About Us</span>
+      <h2 class="section-title">캠핑장과 농원, 한 곳에서</h2>
+      <p class="section-desc">원탑관광농원&amp;원탑캠핑장은 숲과 밭이 맞닿은 자리에서 캠핑과 농촌 체험을 함께 즐길 수 있는 복합 관광 공간입니다.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card forest reveal">
+        <div class="ac-icon">⛺</div>
+        <h3>원탑캠핑장</h3>
+        <p>울창한 숲과 맑은 계곡을 끼고 있는 캠핑장으로, 오토캠핑 사이트부터 냉난방 완비 렌탈존까지 다양한 형태로 이용하실 수 있습니다.</p>
+        <ul>
+          <li>사계절 운영, 예약제 선착순 접수</li>
+          <li>온수 샤워장 · 취사장 · 매점 완비</li>
+          <li>반려동물 동반 캠핑 가능 구역 운영</li>
+        </ul>
+      </div>
+      <div class="about-card wood reveal">
+        <div class="ac-icon">🌾</div>
+        <h3>원탑관광농원</h3>
+        <p>계절마다 직접 재배한 신선한 농산물을 산지 직거래로 만나보실 수 있으며, 수확 체험 프로그램도 함께 운영하고 있습니다.</p>
+        <ul>
+          <li>정성껏 키운 건강한 제철 농산물</li>
+          <li>계절별 수확 체험 프로그램 운영</li>
+          <li>현장 직판 및 전국 택배 발송 가능</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="camp">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Camping Site</span>
+      <h2 class="section-title">캠핑장 안내</h2>
+    </div>
+
+    <div class="card-grid reveal">
+      <div class="site-card site-card-clickable" id="zoneCCard">
+        <div class="site-thumb site-thumb-photo" style="background-image:url('images/campzone-c.jpg');"><span class="thumb-label">캠핑존C</span></div>
+        <div class="site-body">
+          <h4>캠핑존C</h4>
+          <p class="site-desc">넓은 개별 데크에서 반려동물과 함께 여유롭게 머무를 수 있는 구역입니다.</p>
+          <div class="site-meta"><span>기준 4인</span><span>반려동물 동반</span><span>넓은 데크</span></div>
+          <div class="site-price">
+            <div class="price-row"><span class="price-label">비수기~</span><span class="price-value">35,000원</span></div>
+            <div class="price-row price-row-peak"><span class="price-label">성수기~</span><span class="price-value">45,000원</span></div>
+          </div>
+          <div class="site-card-hint">사이트 5개 보기 →</div>
+        </div>
+      </div>
+      <div class="site-card site-card-clickable" id="zoneACard">
+        <div class="site-thumb site-thumb-photo" style="background-image:url('images/campzone-d.jpg');"><span class="thumb-label">캠핑존D</span></div>
+        <div class="site-body">
+          <h4>캠핑존D</h4>
+          <p class="site-desc">차량 진입이 가능한 데크형 사이트로, 초보 캠퍼도 편하게 이용 가능합니다.</p>
+          <div class="site-meta"><span>기준 4인</span><span>데크 완비</span><span>전기 사용 가능</span></div>
+          <div class="site-price">
+            <div class="price-row"><span class="price-label">비수기~</span><span class="price-value">40,000원</span></div>
+            <div class="price-row price-row-peak"><span class="price-label">성수기~</span><span class="price-value">50,000원</span></div>
+          </div>
+          <div class="site-card-hint">사이트 11개 보기 →</div>
+        </div>
+      </div>
+      <div class="site-card site-card-clickable" id="caravanZoneCard">
+        <div class="site-thumb" style="background:linear-gradient(135deg,#8B5E3C,#C89666);">🚐<span class="thumb-label">카라반존</span></div>
+        <div class="site-body">
+          <h4>카라반존</h4>
+          <p class="site-desc">전기와 개수대가 완비된 카라반존으로 편의성을 중시하는 분께 추천합니다.</p>
+          <div class="site-meta"><span>기준 4인</span><span>전기 완비</span><span>개수대 완비</span></div>
+          <div class="site-price">
+            <div class="price-row"><span class="price-label">비수기~</span><span class="price-value">60,000원</span></div>
+            <div class="price-row price-row-peak"><span class="price-label">성수기~</span><span class="price-value">70,000원</span></div>
+          </div>
+          <div class="site-card-hint">사이트 3개 보기 →</div>
+        </div>
+      </div>
+      <div class="site-card site-card-clickable" id="rentalZoneCard">
+        <div class="site-thumb site-thumb-photo" style="background-image:url('images/rental-zone.png');"><span class="thumb-label">렌탈존</span></div>
+        <div class="site-body">
+          <h4>렌탈존</h4>
+          <p class="site-desc">냉난방과 침구가 완비된 감성 텐트에서 편안하게 캠핑을 즐기세요.</p>
+          <div class="site-meta"><span>기준 4인</span><span>냉난방 완비</span><span>침구 제공</span></div>
+          <div class="site-price">
+            <div class="price-row"><span class="price-label">비수기~</span><span class="price-value">80,000원</span></div>
+            <div class="price-row price-row-peak"><span class="price-label">성수기~</span><span class="price-value">120,000원</span></div>
+          </div>
+          <div class="site-card-hint">렌탈동 5개 보기 →</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:56px;margin-bottom:20px;font-size:20px;" class="reveal">부대시설</h3>
+    <div class="facility-grid reveal">
+      <div class="facility-item"><span class="f-icon">🚿</span><span class="f-label">온수 샤워장</span></div>
+      <div class="facility-item" data-photo="images/sites/restroom.png"><span class="f-icon">🚻</span><span class="f-label">깨끗한 화장실</span></div>
+      <div class="facility-item"><span class="f-icon">🍳</span><span class="f-label">취사장 · 개수대</span></div>
+      <div class="facility-item"><span class="f-icon">🏪</span><span class="f-label">매점 · 편의점</span></div>
+      <div class="facility-item"><span class="f-icon">📶</span><span class="f-label">무료 Wi-Fi</span></div>
+      <div class="facility-item"><span class="f-icon">🅿️</span><span class="f-label">캠핑존 주차가능</span></div>
+      <div class="facility-item"><span class="f-icon">🔌</span><span class="f-label">사이트별 전기</span></div>
+      <div class="facility-item"><span class="f-icon">🥾</span><span class="f-label">숲길 산책로</span></div>
+    </div>
+    <p class="price-note">🖱️ 마우스를 부대시설 근처에 가져가면 상세사진이 표시됩니다.</p>
+
+    <h3 style="margin-top:56px;margin-bottom:20px;font-size:20px;" class="reveal">이용요금표</h3>
+    <div class="table-scroll reveal">
+      <table class="price-table">
+        <thead>
+          <tr><th>구분</th><th>기준인원</th><th>비수기</th><th>성수기</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="site-name">캠핑존C</td><td>4인</td><td>35,000원</td><td>45,000원</td></tr>
+          <tr><td class="site-name">캠핑존D</td><td>4인</td><td>40,000원</td><td>50,000원</td></tr>
+          <tr><td class="site-name">카라반존</td><td>4인</td><td>60,000원</td><td>70,000원</td></tr>
+          <tr><td class="site-name">렌탈존</td><td>4인</td><td>80,000원</td><td>120,000원</td></tr>
+          <tr><td class="site-name">추가 인원</td><td>1인당</td><td colspan="2">5,000원</td></tr>
+          <tr><td class="site-name">추가 주차</td><td>1대당</td><td colspan="2">5,000원</td></tr>
+          <tr><td class="site-name">장박</td><td>상시 모집</td><td colspan="2">요금문의 <a href="tel:010-5487-4319">010-5487-4319</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-note reveal">※ 위 요금은 예시이며 시즌 및 사정에 따라 변경될 수 있습니다. 정확한 요금은 전화 문의 바랍니다.</p>
+
+    <h3 style="margin-top:56px;margin-bottom:20px;font-size:20px;" class="reveal">이용안내</h3>
+    <div class="rules-grid reveal">
+      <div class="rule-card"><div class="r-num">1</div><div><h5>체크인 / 체크아웃</h5><p>입실 14:00, 퇴실 14:00을 기준으로 운영합니다.</p></div></div>
+      <div class="rule-card"><div class="r-num">2</div><div><h5>예약 방법</h5><p>전화 또는 카카오톡 채널을 통한 선착순 예약제로 운영됩니다.</p></div></div>
+      <div class="rule-card"><div class="r-num">3</div><div><h5>예약금 및 취소</h5><p>예약 확정 시 예약금이 필요하며, 취소 규정은 전화 상담 시 안내드립니다.</p></div></div>
+      <div class="rule-card"><div class="r-num">4</div><div><h5>정숙 시간</h5><p>다른 이용객을 위해 23:00 ~ 07:00은 정숙을 부탁드립니다.</p></div></div>
+      <div class="rule-card"><div class="r-num">5</div><div><h5>화기 취급</h5><p>지정된 장소 외에서는 화기 취급 및 취사가 제한됩니다.</p></div></div>
+      <div class="rule-card"><div class="r-num">6</div><div><h5>반려동물 동반</h5><p>지정 구역에 한해 동반 가능하며 목줄 착용을 부탁드립니다.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="farm">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Farm</span>
+      <h2 class="section-title">농원 안내</h2>
+      <p class="section-desc">계절마다 다른 얼굴을 보여주는 원탑관광농원의 제철 농산물을 만나보세요.</p>
+    </div>
+
+    <div class="season-tabs reveal" id="seasonTabs">
+      <button class="season-tab active" data-season="spring">봄</button>
+      <button class="season-tab" data-season="summer">여름</button>
+      <button class="season-tab" data-season="autumn">가을</button>
+      <button class="season-tab" data-season="winter">겨울</button>
+    </div>
+
+    <div class="produce-panel active" data-panel="spring">
+      <div class="produce-grid">
+        <div class="produce-card"><div class="produce-photo"><img src="images/produce/strawberry.jpg" alt="딸기"><span class="p-emoji">🍓</span></div><div class="p-body"><h5>딸기</h5><p>새콤달콤 제철 딸기</p></div></div>
+        <div class="produce-card"><div class="produce-photo"><img src="images/produce/ssam-vegetables.jpg" alt="쌈채소"><span class="p-emoji">🥬</span></div><div class="p-body"><h5>쌈채소</h5><p>아삭한 봄 쌈채소</p></div></div>
+        <div class="produce-card"><div class="produce-photo"><img src="images/produce/spring-greens.jpg" alt="봄나물"><span class="p-emoji">🌱</span></div><div class="p-body"><h5>봄나물</h5><p>향긋한 제철 나물</p></div></div>
+        <div class="produce-card"><div class="produce-photo"><img src="images/produce/new-potato.jpg" alt="햇감자"><span class="p-emoji">🥔</span></div><div class="p-body"><h5>햇감자</h5><p>포슬포슬 햇감자</p></div></div>
+      </div>
+    </div>
+    <div class="produce-panel" data-panel="summer">
+      <div class="produce-grid">
+        <div class="produce-card"><div class="produce-photo"><img src="images/produce/corn.jpg" alt="옥수수"><span class="p-emoji">🌽</span></div><div class="p-body"><h5>옥수수</h5><p>달콤한 찰옥수수</p></div></div>
+        <div class="produce-card"><div class="produce-photo"><img src="images/produce/grape.jpg" alt="포도"><span class="p-emoji">🍇</span></div><div class="p-body"><h5>포도</h5><p>탱글탱글 여름 포도</p></div></div>
+        <div class="produce-card"><div class="produce-photo"><img src="images/produce/korean-melon.jpg" alt="참외"><span class="p-emoji">🍈</span></div><div class="p-body"><h5>참외</h5><p>시원한 여름 참외</p></div></div>
+        <div class="produce-card"><div class="produce-photo"><img src="images/produce/tomato.jpg" alt="토마토"><span class="p-emoji">🍅</span></div><div class="p-body"><h5>토마토</h5><p>영양 가득 완숙 토마토</p></div></div>
+      </div>
+    </div>
+    <div class="produce-panel" data-panel="autumn">
+      <div class="produce-grid">
+        <div class="produce-card"><div class="produce-photo"><img src="images/produce/apple.jpg" alt="사과"><span class="p-emoji">🍎</span></div><div class="p-body"><h5>사과</h5><p>아삭한 가을 사과</p></div></div>
+        <div class="produce-card"><div class="produce-photo"><img src="images/produce/pear.jpg" alt="배"><span class="p-emoji">🍐</span></div><div class="p-body"><h5>배</h5><p>과즙 가득 가을 배</p></div></div>
+        <div class="produce-card"><div class="produce-photo"><img src="images/produce/sweet-potato.jpg" alt="고구마"><span class="p-emoji">🍠</span></div><div class="p-body"><h5>고구마</h5><p>달콤한 밤고구마</p></div></div>
+        <div class="produce-card"><div class="produce-photo"><img src="images/produce/chestnut.jpg" alt="밤"><span class="p-emoji">🌰</span></div><div class="p-body"><h5>밤</h5><p>고소한 알밤</p></div></div>
+      </div>
+    </div>
+    <div class="produce-panel" data-panel="winter">
+      <div class="produce-grid">
+        <div class="produce-card"><div class="produce-photo"><img src="images/produce/napa-cabbage.jpg" alt="저장 배추"><span class="p-emoji">🥬</span></div><div class="p-body"><h5>저장 배추</h5><p>속이 꽉 찬 배추</p></div></div>
+        <div class="produce-card"><div class="produce-photo"><img src="images/produce/radish.jpg" alt="무"><span class="p-emoji">🥕</span></div><div class="p-body"><h5>무</h5><p>아삭한 겨울 무</p></div></div>
+        <div class="produce-card"><div class="produce-photo"><img src="images/produce/dried-persimmon.jpg" alt="곶감"><span class="p-emoji">🍊</span></div><div class="p-body"><h5>곶감</h5><p>쫀득한 수제 곶감</p></div></div>
+        <div class="produce-card"><div class="produce-photo"><img src="images/produce/grains.jpg" alt="잡곡"><span class="p-emoji">🌾</span></div><div class="p-body"><h5>잡곡</h5><p>건강한 우리 잡곡</p></div></div>
+      </div>
+    </div>
+
+    <div class="two-col reveal" style="margin-top:44px;">
+      <div class="info-panel">
+        <h4>🧺 수확 체험 프로그램</h4>
+        <div class="steps">
+          <div class="step"><div class="s-dot">1</div><div><p>계절별 수확 체험 신청</p><div class="s-sub">딸기따기, 고구마캐기 등 시즌별 운영</div></div></div>
+          <div class="step"><div class="s-dot">2</div><div><p>전화 또는 카카오톡으로 사전 예약</p><div class="s-sub">체험 인원 및 일정 사전 확인 필요</div></div></div>
+          <div class="step"><div class="s-dot">3</div><div><p>현장 방문 후 체험 진행</p><div class="s-sub">1인당 체험비 10,000원~ (예시)</div></div></div>
+        </div>
+      </div>
+      <div class="info-panel">
+        <h4>🛒 구매 안내</h4>
+        <div class="steps">
+          <div class="step"><div class="s-dot">1</div><div><p>농원 직판장 현장 구매</p><div class="s-sub">방문 시 신선한 제철 농산물 구매 가능</div></div></div>
+          <div class="step"><div class="s-dot">2</div><div><p>카카오톡 채널로 주문 문의</p><div class="s-sub">원하는 품목과 수량을 문의해주세요</div></div></div>
+          <div class="step"><div class="s-dot">3</div><div><p>전국 택배 발송</p><div class="s-sub">수확 즉시 신선하게 포장하여 발송</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Gallery</span>
+      <h2 class="section-title">갤러리</h2>
+      <p class="section-desc">원탑관광농원&amp;원탑캠핑장의 사계절 모습을 만나보세요.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item"><img src="images/aerial-view.jpg" alt="원탑항공뷰"><span class="g-label">원탑항공뷰</span></div>
+      <div class="gallery-item g3"><span class="gallery-item-icon">🌾</span><span class="g-label">농원 전경</span></div>
+      <div class="gallery-item g4"><span class="gallery-item-icon">🌲</span><span class="g-label">숲길 산책로</span></div>
+      <div class="gallery-item"><img src="images/harvest-experience.jpg" alt="수확 체험"><span class="g-label">수확 체험</span></div>
+    </div>
+    <button class="gallery-more-btn" id="galleryMoreBtn">
+      <span>더보기</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </div>
+</section>
+
+<section class="section" id="location">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Location</span>
+      <h2 class="section-title">오시는 길</h2>
+      <p class="section-desc">내비게이션에 '원탑캠핑장'을 검색하시면 편하게 찾아오실 수 있습니다.</p>
+    </div>
+    <div class="location-wrap reveal">
+      <div>
+        <div class="map-box">
+          <div class="map-emoji">🗺️</div>
+          <p>실제 서비스 오픈 시 카카오맵 · 네이버맵이 이곳에 표시됩니다.</p>
+        </div>
+        <div class="addr-row" style="margin-top:14px;">
+          <div>
+            <div class="addr-text">충북 괴산군 청천면 화양리 175</div>
+            <div class="addr-sub">원탑관광농원&amp;원탑캠핑장</div>
+          </div>
+          <button class="copy-btn" id="copyAddrBtn">주소 복사</button>
+        </div>
+      </div>
+      <div class="access-grid">
+        <div class="access-card"><span class="a-icon">🚌</span><div><h5>대중교통 이용 시</h5><p>○○시외버스터미널 하차 후 택시로 약 15분 소요됩니다.</p></div></div>
+        <div class="access-card"><span class="a-icon">🚗</span><div><h5>자가용 이용 시</h5><p>내비게이션에 '원탑캠핑장' 검색 후 안내에 따라 진입해주세요.</p></div></div>
+        <div class="access-card"><span class="a-icon">🅿️</span><div><h5>주차 안내</h5><p>텐트 바로 옆 사이트 안에 차를 세워두실 수 있어, 짐을 멀리서부터 옮길 필요 없이 편하게 이용하실 수 있습니다.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact-section" id="contact">
+  <div class="wrap" style="position:relative;z-index:2;">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:var(--sun-light);">Reservation</span>
+      <h2 class="section-title">예약 및 문의</h2>
+      <p class="section-desc">캠핑장 예약, 농산물 주문, 단체 문의 모두 아래 연락처로 편하게 문의해주세요.</p>
+    </div>
+    <div class="contact-cards reveal">
+      <div class="contact-card">
+        <div class="cc-icon">📞</div>
+        <h5>전화 상담</h5>
+        <p>예약 및 이용 문의</p>
+        <a href="tel:010-5487-4319" class="btn btn-primary" style="width:100%;">010-5487-4319</a>
+      </div>
+      <div class="contact-card">
+        <div class="cc-icon">💬</div>
+        <h5>카카오톡 채널</h5>
+        <p>24시간 문의 접수 가능</p>
+        <a href="#" class="btn btn-outline" style="width:100%;">카카오톡 채널 문의</a>
+      </div>
+      <div class="contact-card">
+        <div class="cc-icon">🌾</div>
+        <h5>농산물 주문</h5>
+        <p>제철 농산물 구매 문의</p>
+        <a href="#" class="btn btn-outline" style="width:100%;">주문 문의하기</a>
+      </div>
+    </div>
+    <div class="hours-box reveal">
+      <div class="h-item">🕒 <b>입실 / 퇴실</b> 입실 14:00 · 퇴실 14:00</div>
+      <div class="h-item">📅 <b>연중무휴</b> (사전 예약 권장)</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title">자주 묻는 질문</h2>
+    </div>
+    <div class="faq-list reveal" id="faqList">
+      <div class="faq-item">
+        <div class="faq-q"><span>반려동물과 함께 캠핑할 수 있나요?</span><span class="faq-plus">+</span></div>
+        <div class="faq-a"><p>캠핑존C 등 지정된 반려동물 동반 구역에서 목줄 착용 시 이용 가능합니다.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>사이트에서 전기를 사용할 수 있나요?</span><span class="faq-plus">+</span></div>
+        <div class="faq-a"><p>오토캠핑, 렌탈존, 카라반존 모두 사이트별 전기 사용이 가능합니다.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>우천 시 예약 취소가 가능한가요?</span><span class="faq-plus">+</span></div>
+        <div class="faq-a"><p>기상 상황에 따른 취소 규정은 전화 상담 시 자세히 안내해 드립니다.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>매점에서 필요한 물품을 구매할 수 있나요?</span><span class="faq-plus">+</span></div>
+        <div class="faq-a"><p>네, 현장 매점에서 기본 식자재와 캠핑 용품 일부를 구매하실 수 있습니다.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>농산물을 택배로 받을 수 있나요?</span><span class="faq-plus">+</span></div>
+        <div class="faq-a"><p>네, 카카오톡 채널로 품목과 수량을 문의해주시면 전국 택배 발송이 가능합니다.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>단체 예약도 가능한가요?</span><span class="faq-plus">+</span></div>
+        <div class="faq-a"><p>네, 단체 예약은 전화로 별도 상담 후 진행해 드리고 있습니다.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-logo">⛺ 원탑관광농원&amp;원탑캠핑장</div>
+      <div class="footer-info">
+        대표자 : 홍길동(예시) &nbsp;|&nbsp; 사업자등록번호 : 000-00-00000(예시)<br>
+        주소 : 충북 괴산군 청천면 화양리 175 &nbsp;|&nbsp; 전화 : 010-5487-4319<br>
+        통신판매업신고번호 : 제0000-○○00-0000호(예시)
+      </div>
+      <div class="footer-links">
+        <a href="#about">소개</a>
+        <a href="#camp">캠핑장</a>
+        <a href="#farm">농원</a>
+        <a href="#location">오시는 길</a>
+        <a href="#contact">예약문의</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 원탑관광농원&amp;원탑캠핑장. All rights reserved.</div>
+  </div>
+</footer>
+
+<div class="floating-bar">
+  <a href="tel:010-5487-4319" class="btn btn-forest">📞 전화하기</a>
+  <a href="#" class="btn btn-primary">💬 카카오톡 문의</a>
+</div>
+
+<div class="rental-modal" id="rentalModal">
+  <div class="rental-modal-backdrop" id="rentalModalBackdrop"></div>
+  <div class="rental-modal-panel">
+    <div class="rental-modal-header">
+      <h3>🏕️ 렌탈존 안내</h3>
+      <button class="rental-modal-close" id="rentalModalClose" aria-label="닫기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <p class="rental-modal-sub">원하시는 렌탈동을 확인하고, 지도에서 위치를 바로 볼 수 있어요.</p>
+    <div class="rental-modal-body">
+      <div class="rental-item">
+        <div class="rental-photo" style="background:linear-gradient(135deg,#E8A33D,#F4C669);">🏕️</div>
+        <div class="rental-info">
+          <h5>렌탈동 1 (렌J)</h5>
+          <p>스탠다드형 · 기준 2인 · 냉난방 완비</p>
+        </div>
+        <button class="rental-locate-btn" data-left="20" data-top="8" data-width="9" data-height="9">📍 위치보기</button>
+      </div>
+      <div class="rental-item">
+        <div class="rental-photo" style="background:linear-gradient(135deg,#F4C669,#E8A33D);">🏕️</div>
+        <div class="rental-info">
+          <h5>렌탈동 2 (렌K)</h5>
+          <p>스탠다드형 · 기준 2인 · 냉난방 완비</p>
+        </div>
+        <button class="rental-locate-btn" data-left="27" data-top="8" data-width="9" data-height="9">📍 위치보기</button>
+      </div>
+      <div class="rental-item">
+        <div class="rental-photo" style="background:linear-gradient(135deg,#8B5E3C,#C89666);">🏠</div>
+        <div class="rental-info">
+          <h5>렌탈동 3 (렌I)</h5>
+          <p>패밀리형 · 기준 4인 · 침구 2세트 제공</p>
+        </div>
+        <button class="rental-locate-btn" data-left="33.5" data-top="8" data-width="9" data-height="9">📍 위치보기</button>
+      </div>
+      <div class="rental-item">
+        <div class="rental-photo" style="background:linear-gradient(135deg,#C89666,#8B5E3C);">🏠</div>
+        <div class="rental-info">
+          <h5>렌탈동 4</h5>
+          <p>패밀리형 · 기준 4인 · 침구 2세트 제공</p>
+        </div>
+        <button class="rental-locate-btn">📍 위치보기</button>
+      </div>
+      <div class="rental-item">
+        <div class="rental-photo" style="background:linear-gradient(135deg,#5C8A5A,#2F5233);">🏡</div>
+        <div class="rental-info">
+          <h5>렌탈동 5</h5>
+          <p>프리미엄형 · 기준 4인 · 개별 테라스</p>
+        </div>
+        <button class="rental-locate-btn">📍 위치보기</button>
+      </div>
+    </div>
+    <p class="rental-modal-note">※ 사진은 예시이며 실제 렌탈동 모습과 다를 수 있습니다.</p>
+  </div>
+</div>
+
+<div class="rental-modal" id="zoneAModal">
+  <div class="rental-modal-backdrop" id="zoneAModalBackdrop"></div>
+  <div class="rental-modal-panel">
+    <div class="rental-modal-header">
+      <h3>🚗 캠핑존D 안내</h3>
+      <button class="rental-modal-close" id="zoneAModalClose" aria-label="닫기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <p class="rental-modal-sub">캠핑존D의 사이트 목록입니다. 지도에서 위치를 바로 볼 수 있어요.</p>
+    <div class="rental-modal-body" id="zoneAModalBody"></div>
+    <p class="rental-modal-note">※ 사진은 예시이며 실제 사이트 모습과 다를 수 있습니다.</p>
+  </div>
+</div>
+
+<div class="rental-modal" id="caravanModal">
+  <div class="rental-modal-backdrop" id="caravanModalBackdrop"></div>
+  <div class="rental-modal-panel">
+    <div class="rental-modal-header">
+      <h3>🚐 카라반존 안내</h3>
+      <button class="rental-modal-close" id="caravanModalClose" aria-label="닫기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <p class="rental-modal-sub">카라반존의 사이트 목록입니다. 지도에서 위치를 바로 볼 수 있어요.</p>
+    <div class="rental-modal-body" id="caravanModalBody"></div>
+    <p class="rental-modal-note">※ 사진은 예시이며 실제 사이트 모습과 다를 수 있습니다.</p>
+  </div>
+</div>
+
+<div class="rental-modal" id="zoneCModal">
+  <div class="rental-modal-backdrop" id="zoneCModalBackdrop"></div>
+  <div class="rental-modal-panel">
+    <div class="rental-modal-header">
+      <h3>🐾 캠핑존C 안내</h3>
+      <button class="rental-modal-close" id="zoneCModalClose" aria-label="닫기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <p class="rental-modal-sub">캠핑존C의 사이트 목록입니다. 지도에서 위치를 바로 볼 수 있어요.</p>
+    <div class="rental-modal-body" id="zoneCModalBody"></div>
+    <p class="rental-modal-note">※ 사진은 예시이며 실제 사이트 모습과 다를 수 있습니다.</p>
+  </div>
+</div>
+
+<div class="rental-modal" id="galleryModal">
+  <div class="rental-modal-backdrop" id="galleryModalBackdrop"></div>
+  <div class="rental-modal-panel gallery-modal-panel">
+    <div class="rental-modal-header">
+      <h3>📷 갤러리 전체보기</h3>
+      <button class="rental-modal-close" id="galleryModalClose" aria-label="닫기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <div class="gallery-modal-grid" id="galleryModalGrid"></div>
+  </div>
+</div>
+
+<script>
+// header scroll style
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+}, {passive:true});
+
+// mobile nav drawer
+const drawer = document.getElementById('navDrawer');
+document.getElementById('menuBtn').addEventListener('click', () => drawer.classList.add('open'));
+document.getElementById('drawerClose').addEventListener('click', () => drawer.classList.remove('open'));
+document.getElementById('drawerBackdrop').addEventListener('click', () => drawer.classList.remove('open'));
+document.querySelectorAll('.nav-drawer a').forEach(a => a.addEventListener('click', () => drawer.classList.remove('open')));
+
+// season tabs
+const tabs = document.querySelectorAll('.season-tab');
+const panels = document.querySelectorAll('.produce-panel');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    panels.forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelector('.produce-panel[data-panel="' + tab.dataset.season + '"]').classList.add('active');
+  });
+});
+
+// faq accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o => {
+      o.classList.remove('open');
+      o.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+
+// copy address
+document.getElementById('copyAddrBtn').addEventListener('click', async () => {
+  const addr = '충북 괴산군 청천면 화양리 175';
+  const btn = document.getElementById('copyAddrBtn');
+  try {
+    await navigator.clipboard.writeText(addr);
+    btn.textContent = '복사 완료!';
+  } catch (e) {
+    btn.textContent = '복사 실패';
+  }
+  setTimeout(() => btn.textContent = '주소 복사', 1800);
+});
+
+// scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.12});
+revealEls.forEach(el => io.observe(el));
+
+// play hero video only while visible on screen
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo) {
+  const videoIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        heroVideo.play().catch(() => {});
+      } else {
+        heroVideo.pause();
+      }
+    });
+  }, {threshold:0.25});
+  videoIo.observe(heroVideo);
+}
+
+// zone modals (rental / A / caravan)
+function buildSiteItems(container, ids, gradient, icon, desc, photos){
+  container.innerHTML = ids.map(id => {
+    const photo = photos && photos[id];
+    const photoInner = photo
+      ? `<div class="rental-photo" data-photo="${photo}" style="background-image:url('${photo}');background-size:cover;background-position:center;"></div>`
+      : `<div class="rental-photo" style="background:${gradient};">${icon}</div>`;
+    return `
+    <div class="rental-item">
+      ${photoInner}
+      <div class="rental-info">
+        <h5>${id}</h5>
+        <p>${desc}</p>
+      </div>
+      <button class="rental-locate-btn">📍 위치보기</button>
+    </div>
+  `;
+  }).join('');
+}
+buildSiteItems(
+  document.getElementById('zoneAModalBody'),
+  Array.from({length:11}, (_, i) => 'D-' + (i+1)),
+  'linear-gradient(135deg,#3E6B45,#5C8A5A)', '🚗', '기준 4인 · 데크 완비 · 전기 사용 가능'
+);
+buildSiteItems(
+  document.getElementById('caravanModalBody'),
+  Array.from({length:3}, (_, i) => 'C-' + (i+1)),
+  'linear-gradient(135deg,#8B5E3C,#C89666)', '🚐', '기준 4인 · 전기 완비 · 개수대 완비'
+);
+buildSiteItems(
+  document.getElementById('zoneCModalBody'),
+  Array.from({length:5}, (_, i) => 'C' + (i+1)),
+  'linear-gradient(135deg,#5C8A5A,#2F5233)', '🐾', '기준 4인 · 반려동물 동반 · 넓은 데크',
+  {C2: 'images/sites/zoneC-c2.jpg'}
+);
+
+function setupZoneModal(cfg){
+  const modal = document.getElementById(cfg.modal);
+  const backdrop = document.getElementById(cfg.backdrop);
+  const closeBtn = document.getElementById(cfg.close);
+  const card = document.getElementById(cfg.card);
+  const highlight = document.getElementById(cfg.highlight);
+  const defaultPos = {
+    left: highlight.style.left, top: highlight.style.top,
+    width: highlight.style.width, height: highlight.style.height
+  };
+
+  function open(){ modal.classList.add('open'); }
+  function close(){ modal.classList.remove('open'); }
+
+  if (card) card.addEventListener('click', open);
+  backdrop.addEventListener('click', close);
+  closeBtn.addEventListener('click', close);
+
+  modal.querySelectorAll('.rental-locate-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      close();
+      if (btn.dataset.left) {
+        highlight.style.left = btn.dataset.left + '%';
+        highlight.style.top = btn.dataset.top + '%';
+        highlight.style.width = btn.dataset.width + '%';
+        highlight.style.height = btn.dataset.height + '%';
+      } else {
+        highlight.style.left = defaultPos.left;
+        highlight.style.top = defaultPos.top;
+        highlight.style.width = defaultPos.width;
+        highlight.style.height = defaultPos.height;
+      }
+      const headerH = document.getElementById('siteHeader').offsetHeight;
+      const hlRect = highlight.getBoundingClientRect();
+      const hlCenterY = hlRect.top + window.pageYOffset + hlRect.height / 2;
+      const viewportMidY = headerH + (window.innerHeight - headerH) / 2;
+      const targetY = hlCenterY - viewportMidY;
+      window.scrollTo({top: Math.max(targetY, 0), behavior: 'smooth'});
+      setTimeout(() => {
+        highlight.classList.remove('show');
+        void highlight.offsetWidth;
+        highlight.classList.add('show');
+      }, 450);
+    });
+  });
+}
+
+// hover-to-zoom preview for site/facility photos (supports single or multiple images)
+const photoZoom = document.createElement('div');
+photoZoom.className = 'photo-zoom-preview';
+document.body.appendChild(photoZoom);
+const PHOTO_ZOOM_IMG_W = 200, PHOTO_ZOOM_IMG_H = 260, PHOTO_ZOOM_GAP = 8;
+
+document.addEventListener('mouseover', (e) => {
+  const el = e.target.closest('[data-photo],[data-photos]');
+  if (!el) return;
+  const photos = el.dataset.photos ? JSON.parse(el.dataset.photos) : [el.dataset.photo];
+  photoZoom.innerHTML = photos.map(src => `<img src="${src}" alt="">`).join('');
+  const rect = el.getBoundingClientRect();
+  const width = photos.length * PHOTO_ZOOM_IMG_W + (photos.length - 1) * PHOTO_ZOOM_GAP;
+  const height = PHOTO_ZOOM_IMG_H;
+  let left = rect.right + 14;
+  let top = rect.top + rect.height / 2 - height / 2;
+  if (left + width > window.innerWidth - 12) left = rect.left - width - 14;
+  if (left < 12) left = 12;
+  if (top < 12) top = 12;
+  if (top + height > window.innerHeight - 12) top = window.innerHeight - height - 12;
+  photoZoom.style.left = left + 'px';
+  photoZoom.style.top = top + 'px';
+  photoZoom.classList.add('show');
+});
+document.addEventListener('mouseout', (e) => {
+  const el = e.target.closest('[data-photo],[data-photos]');
+  if (!el) return;
+  if (e.relatedTarget && el.contains(e.relatedTarget)) return;
+  photoZoom.classList.remove('show');
+});
+
+setupZoneModal({modal:'rentalModal', backdrop:'rentalModalBackdrop', close:'rentalModalClose', card:'rentalZoneCard', highlight:'rentalZoneHighlight'});
+setupZoneModal({modal:'zoneAModal', backdrop:'zoneAModalBackdrop', close:'zoneAModalClose', card:'zoneACard', highlight:'zoneAHighlight'});
+setupZoneModal({modal:'caravanModal', backdrop:'caravanModalBackdrop', close:'caravanModalClose', card:'caravanZoneCard', highlight:'caravanZoneHighlight'});
+setupZoneModal({modal:'zoneCModal', backdrop:'zoneCModalBackdrop', close:'zoneCModalClose', card:'zoneCCard', highlight:'zoneCHighlight'});
+
+// gallery "더보기" — full list lives here; add new uploads to this array and both
+// the button count and the popup grid update automatically. src = photo, icon = placeholder.
+const galleryPhotos = [
+  {src:'images/aerial-view.jpg', alt:'원탑항공뷰', label:'원탑항공뷰'},
+  {icon:'🌾', label:'농원 전경'},
+  {icon:'🌲', label:'숲길 산책로'},
+  {src:'images/harvest-experience.jpg', alt:'수확 체험', label:'수확 체험'}
+];
+const galleryModalGrid = document.getElementById('galleryModalGrid');
+galleryModalGrid.innerHTML = galleryPhotos.map(p => `
+  <div class="gallery-item">
+    ${p.src ? `<img src="${p.src}" alt="${p.label}">` : `<span class="gallery-item-icon">${p.icon}</span>`}
+    <span class="g-label">${p.label}</span>
+  </div>
+`).join('');
+
+const galleryModal = document.getElementById('galleryModal');
+const galleryModalBackdrop = document.getElementById('galleryModalBackdrop');
+const galleryModalClose = document.getElementById('galleryModalClose');
+const galleryMoreBtn = document.getElementById('galleryMoreBtn');
+galleryMoreBtn.addEventListener('click', () => galleryModal.classList.add('open'));
+galleryModalBackdrop.addEventListener('click', () => galleryModal.classList.remove('open'));
+galleryModalClose.addEventListener('click', () => galleryModal.classList.remove('open'));
+
+// clear map highlight once the map scrolls out of view
+const heroMapWrap = document.querySelector('.hero-map-wrap');
+if (heroMapWrap) {
+  const mapIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        document.querySelectorAll('.zone-highlight.show').forEach(el => el.classList.remove('show'));
+      }
+    });
+  }, {threshold:0});
+  mapIo.observe(heroMapWrap);
+}
+</script>
+</body>
+</html>
