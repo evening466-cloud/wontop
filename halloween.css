@@ -27,6 +27,8 @@ table.price-table tbody tr:nth-child(even){background:rgba(59,31,94,0.04);}
 #hw-layer{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50;}
 .hw-bat{position:absolute;left:0;font-size:26px;opacity:0;animation:hw-fly linear infinite;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5));}
 .hw-float{position:absolute;font-size:34px;z-index:1;pointer-events:none;animation:hw-bob 4s ease-in-out infinite;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.45));}
+.hw-small{font-size:30px;opacity:.92;}
+@media(max-width:700px){.hw-small{font-size:22px}}
 @keyframes hw-fly{
   0%{transform:translate(-80px,0) scale(.8);opacity:0}
   8%{opacity:.95}

@@ -34,6 +34,24 @@
     });
   }
 
+  var spots = [
+    { e: '🎃', pos: { top: '10px', left: '4%' } },
+    { e: '👻', pos: { top: '14px', right: '5%' } },
+    { e: '🎃', pos: { bottom: '8px', right: '6%' } },
+    { e: '👻', pos: { bottom: '10px', left: '5%' } }
+  ];
+  document.querySelectorAll('section.section, .contact-section, footer').forEach(function (sec, i) {
+    if (getComputedStyle(sec).position === 'static') sec.style.position = 'relative';
+    [spots[i % 4], spots[(i + 2) % 4]].forEach(function (s, j) {
+      var el = document.createElement('span');
+      el.className = 'hw-float hw-small';
+      el.textContent = s.e;
+      Object.keys(s.pos).forEach(function (k) { el.style[k] = s.pos[k]; });
+      el.style.animationDelay = ((i * 0.7 + j * 1.3) % 4) + 's';
+      sec.appendChild(el);
+    });
+  });
+
   document.querySelectorAll('.nav-badge,.hero-badge').forEach(function (el) {
     el.textContent = el.textContent.replace('🍃', '🎃');
   });
