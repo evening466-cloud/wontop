@@ -52,6 +52,30 @@
     });
   });
 
+  // 제목·메뉴 글자를 한 글자씩 아래로 길게 늘어뜨려 녹아내리는 느낌
+  var stretch = [1.0, 1.55, 1.2, 1.85, 1.1, 1.65, 1.35];
+  var n = 0;
+  function melt(node) {
+    var text = node.nodeValue;
+    var frag = document.createDocumentFragment();
+    for (var i = 0; i < text.length; i++, n++) {
+      var span = document.createElement('span');
+      span.className = 'hw-ch';
+      span.setAttribute('aria-hidden', 'true');
+      span.style.setProperty('--s', stretch[(n * 3) % stretch.length]);
+      span.style.setProperty('--d', (-(n % 7) * 0.6) + 's');
+      span.textContent = text[i];
+      frag.appendChild(span);
+    }
+    node.parentNode.replaceChild(frag, node);
+  }
+  document.querySelectorAll('.logo, .nav-desktop a').forEach(function (el) {
+    el.setAttribute('aria-label', el.textContent.trim());
+    Array.prototype.slice.call(el.childNodes).forEach(function (c) {
+      if (c.nodeType === 3 && c.nodeValue.trim()) melt(c);
+    });
+  });
+
   document.querySelectorAll('.nav-badge,.hero-badge').forEach(function (el) {
     el.textContent = el.textContent.replace('🍃', '🎃');
   });

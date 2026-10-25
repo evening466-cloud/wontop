@@ -1,4 +1,4 @@
-/* 할로윈 임시 테마 — index.html 의 HALLOWEEN 블록(2줄)만 지우면 원상복구됩니다 */
+﻿/* 할로윈 임시 테마 — index.html 의 HALLOWEEN 블록(2줄)만 지우면 원상복구됩니다 */
 @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
 :root{
   --forest:#3B1F5E;
@@ -32,16 +32,9 @@ table.price-table tbody tr:nth-child(even){background:rgba(59,31,94,0.04);}
 .logo{font-size:30px;}
 .nav-desktop a{font-size:25px;padding:6px 14px;}
 header.scrolled .logo,header.scrolled .nav-desktop a{color:#3B1F5E;text-shadow:none;}
-.logo::after,.nav-desktop a::after{
-  content:"";position:absolute;left:0;right:0;top:calc(100% - .42em);height:.7em;
-  background:currentColor;pointer-events:none;transform-origin:top;
-  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 20'%3E%3Crect x='3' width='3' height='10' rx='1.5'/%3E%3Ccircle cx='4.5' cy='10' r='2'/%3E%3Crect x='11' width='3' height='16' rx='1.5'/%3E%3Ccircle cx='12.5' cy='16' r='2.3'/%3E%3Crect x='18' width='3' height='7' rx='1.5'/%3E%3Ccircle cx='19.5' cy='7' r='1.9'/%3E%3C/svg%3E") repeat-x left top/24px 100%;
-  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 20'%3E%3Crect x='3' width='3' height='10' rx='1.5'/%3E%3Ccircle cx='4.5' cy='10' r='2'/%3E%3Crect x='11' width='3' height='16' rx='1.5'/%3E%3Ccircle cx='12.5' cy='16' r='2.3'/%3E%3Crect x='18' width='3' height='7' rx='1.5'/%3E%3Ccircle cx='19.5' cy='7' r='1.9'/%3E%3C/svg%3E") repeat-x left top/24px 100%;
-  animation:hw-drip 3.6s ease-in-out infinite;
-}
-.nav-desktop a:nth-child(2n)::after{animation-delay:-1.2s;}
-.nav-desktop a:nth-child(3n)::after{animation-delay:-2.4s;}
-@keyframes hw-drip{0%,100%{transform:scaleY(.7)}50%{transform:scaleY(1.2)}}
+.hw-ch{display:inline-block;transform-origin:50% 14%;transform:scaleY(var(--s,1));animation:hw-melt 4.2s ease-in-out infinite;animation-delay:var(--d,0s);white-space:pre;}
+header.scrolled .hw-ch{transform:scaleY(calc(1 + (var(--s,1) - 1) * .45));animation:none;}
+@keyframes hw-melt{0%,100%{transform:scaleY(var(--s,1))}50%{transform:scaleY(calc(var(--s,1) * 1.14))}}
 @media(max-width:700px){.logo{font-size:25px;}}
 
 /* decorations (halloween.js 가 추가) */
@@ -62,4 +55,4 @@ header.scrolled .logo,header.scrolled .nav-desktop a{color:#3B1F5E;text-shadow:n
 @keyframes hw-bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-12px) rotate(4deg)}}
 @keyframes hw-flicker{0%,100%{opacity:.5}45%{opacity:.35}60%{opacity:.55}}
 @media(max-width:700px){.hw-float{font-size:26px}}
-@media(prefers-reduced-motion:reduce){.hw-bat,.hw-float,.hero::before,.logo::after,.nav-desktop a::after{animation:none}.hw-bat{display:none}}
+@media(prefers-reduced-motion:reduce){.hw-bat,.hw-float,.hero::before,.hw-ch{animation:none}.hw-bat{display:none}}
