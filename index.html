@@ -137,17 +137,19 @@ header.scrolled .menu-btn{background:rgba(47,82,51,0.08);color:var(--forest);}
 }
 .hero p.lead{font-size:16px;color:rgba(255,255,255,0.9);margin:0;}
 .hero-map-wrap{position:relative;container-type:inline-size;}
-.map-fac{
-  position:absolute;transform:translate(-50%,-50%) rotate(5.5deg);z-index:2;width:3.8%;aspect-ratio:1/1;
-  display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;
-  background:#fff;border:1.5px solid #fff;border-radius:22%;box-shadow:0 2px 7px rgba(0,0,0,0.5);
-  font-size:11px;font-size:2.5cqw;line-height:1;
+.map-plan{
+  position:absolute;left:43%;top:49.2%;width:15.6%;aspect-ratio:182/128;z-index:2;
+  transform:translate(-50%,-50%) rotate(5.5deg);
+  display:grid;grid-template-columns:1.05fr 1fr 1fr 1.05fr;grid-template-rows:.55fr 1fr 1fr;gap:1.5px;padding:1.5px;
+  background:rgba(255,255,255,0.8);border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,0.55);
+  font-size:11px;font-size:2.3cqw;line-height:1;
 }
-.map-fac-pair{aspect-ratio:1/2.1;}
-.map-fac-m{border-color:#2F7FE0;}
-.map-fac-f{border-color:#E8508F;}
-.map-fac-store{border-color:#FF9F1C;}
-.map-fac-sink{border-color:#1BB6C8;}
+.map-plan>div{display:flex;align-items:center;justify-content:center;}
+.map-plan .mp-title{grid-column:1/-1;background:rgba(20,12,35,0.88);color:#fff;font-size:1.45cqw;font-weight:700;letter-spacing:.2px;white-space:nowrap;}
+.mp-m{background:rgba(47,127,224,0.5);}
+.mp-f{background:rgba(232,80,143,0.5);}
+.mp-store{grid-row:2/4;background:rgba(255,159,28,0.52);}
+.mp-sink{grid-row:2/4;background:rgba(27,182,200,0.52);}
 .hero-map{width:100%;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,0.35);display:block;}
 .zone-e-tag{
   position:absolute;transform:translate(-50%,-50%);
@@ -512,10 +514,15 @@ footer{background:#1c2f1f;color:rgba(255,255,255,0.65);padding:48px 0 100px;}
           <img class="hero-map" src="images/campsite-map.png" alt="화양원탑 캠핑장 사이트 배치도">
           <span class="zone-e-tag zone-e-tag-top">🚧 리뉴얼중</span>
           <span class="zone-e-tag zone-e-tag-bottom">🚧 리뉴얼중</span>
-          <div class="map-fac map-fac-pair map-fac-m" style="left:34.8%;top:48.7%;" title="남자 화장실 · 샤워실" aria-label="남자 화장실 · 샤워실"><span>🚹</span><span>🚿</span></div>
-          <div class="map-fac map-fac-pair map-fac-f" style="left:51.1%;top:49.6%;" title="여자 화장실 · 샤워실" aria-label="여자 화장실 · 샤워실"><span>🚺</span><span>🚿</span></div>
-          <div class="map-fac map-fac-store" style="left:42.5%;top:41.9%;" title="매점" aria-label="매점"><span>🏪</span></div>
-          <div class="map-fac map-fac-sink" style="left:46.8%;top:42.3%;" title="개수대" aria-label="개수대"><span>🚰</span></div>
+          <div class="map-plan" aria-label="건물 내부 안내: 남자 화장실·샤워실, 매점, 개수대, 여자 화장실·샤워실">
+            <div class="mp-title">화양원탑 캠핑장</div>
+            <div class="mp-m" style="grid-column:1;grid-row:2;" title="남자 화장실">🚹</div>
+            <div class="mp-m" style="grid-column:1;grid-row:3;" title="남자 샤워실">🚿</div>
+            <div class="mp-store" style="grid-column:2;" title="매점">🏪</div>
+            <div class="mp-sink" style="grid-column:3;" title="개수대">🚰</div>
+            <div class="mp-f" style="grid-column:4;grid-row:2;" title="여자 화장실">🚺</div>
+            <div class="mp-f" style="grid-column:4;grid-row:3;" title="여자 샤워실">🚿</div>
+          </div>
           <div class="zone-highlight" id="rentalZoneHighlight" style="left:10%;top:7%;width:26%;height:15%;"></div>
           <div class="zone-highlight" id="zoneAHighlight" style="left:18%;top:30%;width:70%;height:20%;"></div>
           <div class="zone-highlight" id="caravanZoneHighlight" style="left:24%;top:79%;width:50%;height:19%;"></div>
