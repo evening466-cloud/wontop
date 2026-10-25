@@ -1,0 +1,42 @@
+/* 할로윈 임시 테마 — index.html 의 HALLOWEEN 블록(2줄)만 지우면 원상복구됩니다 */
+:root{
+  --forest:#3B1F5E;
+  --forest-2:#5B2D8A;
+  --forest-light:#8E5BC7;
+  --wood:#B8541A;
+  --wood-light:#E8863A;
+  --sun:#FF7A1A;
+  --sun-light:#FFB066;
+  --cream:#FBF0E4;
+  --line:rgba(59,31,94,0.16);
+}
+.hero{background:linear-gradient(165deg,#120a1f 0%,#2a1245 45%,#4a1f78 100%);}
+.hero::before{background:radial-gradient(circle,#FF7A1A 0%,transparent 70%);animation:hw-flicker 3.2s ease-in-out infinite;}
+.contact-section{background:linear-gradient(165deg,#3B1F5E 0%,#1a0d2e 100%);}
+footer{background:#0f0818;}
+.btn-forest{box-shadow:0 10px 24px rgba(59,31,94,0.35);}
+.btn-primary{box-shadow:0 10px 24px rgba(255,122,26,0.4);}
+.tag,.site-meta span,.quick-item .qi-icon,.about-card.forest .ac-icon,.rental-locate-btn,
+header.scrolled .nav-badge,header.scrolled .menu-btn,header.scrolled .nav-desktop a:hover{background:rgba(59,31,94,0.09);}
+header.scrolled .nav-badge{border-color:rgba(59,31,94,0.22);}
+table.price-table tbody tr:nth-child(even){background:rgba(59,31,94,0.04);}
+.gallery-item.g4{background:linear-gradient(135deg,#8E5BC7,#3B1F5E);}
+.eyebrow::before{content:"🎃";width:auto;height:auto;background:none;font-size:15px;letter-spacing:0;}
+
+/* decorations (halloween.js 가 추가) */
+#hw-layer{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50;}
+.hw-bat{position:absolute;left:0;font-size:26px;opacity:0;animation:hw-fly linear infinite;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5));}
+.hw-float{position:absolute;font-size:34px;z-index:1;pointer-events:none;animation:hw-bob 4s ease-in-out infinite;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.45));}
+@keyframes hw-fly{
+  0%{transform:translate(-80px,0) scale(.8);opacity:0}
+  8%{opacity:.95}
+  25%{transform:translate(25vw,-28px) scale(1)}
+  50%{transform:translate(52vw,22px) scale(.9)}
+  75%{transform:translate(78vw,-24px) scale(1)}
+  92%{opacity:.95}
+  100%{transform:translate(112vw,0) scale(.8);opacity:0}
+}
+@keyframes hw-bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-12px) rotate(4deg)}}
+@keyframes hw-flicker{0%,100%{opacity:.5}45%{opacity:.35}60%{opacity:.55}}
+@media(max-width:700px){.hw-float{font-size:26px}}
+@media(prefers-reduced-motion:reduce){.hw-bat,.hw-float,.hero::before{animation:none}.hw-bat{display:none}}
