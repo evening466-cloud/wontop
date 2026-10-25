@@ -91,7 +91,7 @@ header.scrolled .nav-desktop a{color:var(--ink-2);}
 header.scrolled .nav-desktop a:hover{background:rgba(47,82,51,0.08);color:var(--forest);}
 .nav-cta{display:none;}
 .nav-badge{display:none;white-space:nowrap;}
-.header-inner .nav-badge{margin-bottom:0;}
+.header-inner .nav-badge{margin-bottom:0;display:none;}
 header.scrolled .nav-badge{background:rgba(47,82,51,0.08);border-color:rgba(47,82,51,0.2);color:var(--forest);}
 .menu-btn{
   width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
@@ -136,7 +136,18 @@ header.scrolled .menu-btn{background:rgba(47,82,51,0.08);color:var(--forest);}
   font-size:13px;font-weight:700;margin-bottom:22px;
 }
 .hero p.lead{font-size:16px;color:rgba(255,255,255,0.9);margin:0;}
-.hero-map-wrap{position:relative;}
+.hero-map-wrap{position:relative;container-type:inline-size;}
+.map-fac{
+  position:absolute;transform:translate(-50%,-50%);z-index:2;width:5%;aspect-ratio:1/1;
+  display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;
+  background:#fff;border:2px solid #fff;border-radius:22%;box-shadow:0 3px 10px rgba(0,0,0,0.5);
+  font-size:14px;font-size:3.4cqw;line-height:1;
+}
+.map-fac-pair{aspect-ratio:1/2.1;}
+.map-fac-m{border-color:#2F7FE0;}
+.map-fac-f{border-color:#E8508F;}
+.map-fac-store{border-color:#FF9F1C;}
+.map-fac-sink{border-color:#1BB6C8;}
 .hero-map{width:100%;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,0.35);display:block;}
 .zone-e-tag{
   position:absolute;transform:translate(-50%,-50%);
@@ -436,7 +447,7 @@ footer{background:#1c2f1f;color:rgba(255,255,255,0.65);padding:48px 0 100px;}
 }
 @media(min-width:960px){
   .nav-desktop{display:flex;}
-  .nav-badge{display:inline-flex;}
+  .header-inner .nav-badge{display:inline-flex;}
   .menu-btn{display:none;}
   .floating-bar{display:none;}
   .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
@@ -501,6 +512,10 @@ footer{background:#1c2f1f;color:rgba(255,255,255,0.65);padding:48px 0 100px;}
           <img class="hero-map" src="images/campsite-map.png" alt="화양원탑 캠핑장 사이트 배치도">
           <span class="zone-e-tag zone-e-tag-top">🚧 리뉴얼중</span>
           <span class="zone-e-tag zone-e-tag-bottom">🚧 리뉴얼중</span>
+          <div class="map-fac map-fac-pair map-fac-m" style="left:34.2%;top:48.3%;" title="남자 화장실 · 샤워실" aria-label="남자 화장실 · 샤워실"><span>🚹</span><span>🚿</span></div>
+          <div class="map-fac map-fac-pair map-fac-f" style="left:51.8%;top:48.3%;" title="여자 화장실 · 샤워실" aria-label="여자 화장실 · 샤워실"><span>🚺</span><span>🚿</span></div>
+          <div class="map-fac map-fac-store" style="left:42.8%;top:55.4%;" title="매점" aria-label="매점"><span>🏪</span></div>
+          <div class="map-fac map-fac-sink" style="left:47.9%;top:55.4%;" title="개수대" aria-label="개수대"><span>🚰</span></div>
           <div class="zone-highlight" id="rentalZoneHighlight" style="left:10%;top:7%;width:26%;height:15%;"></div>
           <div class="zone-highlight" id="zoneAHighlight" style="left:18%;top:30%;width:70%;height:20%;"></div>
           <div class="zone-highlight" id="caravanZoneHighlight" style="left:24%;top:79%;width:50%;height:19%;"></div>
