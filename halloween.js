@@ -114,13 +114,11 @@
       var base = logoText.nodeValue.trim();
       var box = document.createElement('span');
       box.className = 'hw-logo-text';
-      box.appendChild(letters(base));
-      box.appendChild(document.createTextNode(' '));
-      var last = letters('할로윈');
-      last.insertAdjacentHTML('beforeend', lanternSvg);
-      box.appendChild(last);
+      var word = letters(base);
+      word.insertAdjacentHTML('beforeend', lanternSvg);
+      box.appendChild(word);
       logo.replaceChild(box, logoText);
-      logo.setAttribute('aria-label', base + ' 할로윈');
+      logo.setAttribute('aria-label', base);
     }
   }
 
