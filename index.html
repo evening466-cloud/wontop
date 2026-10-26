@@ -243,6 +243,15 @@ table.price-table tbody tr:nth-child(even){background:rgba(47,82,51,0.03);}
 table.price-table td.site-name{text-align:left;font-weight:700;color:var(--ink);}
 table.price-table td a{color:var(--forest);font-weight:700;text-decoration:none;}
 table.price-table td a:hover{text-decoration:underline;}
+@media(max-width:700px){
+  table.price-table{min-width:0;table-layout:auto;}
+  table.price-table th,table.price-table td{padding:11px 5px;font-size:12px;}
+  table.price-table thead th{font-size:11.5px;}
+  table.price-table td.site-name{padding-left:10px;white-space:nowrap;}
+  table.price-table td[colspan]{white-space:normal;}
+}
+.fi-sep{margin:0 2px;}
+@media(max-width:700px){.fi-sep{display:none;}.fi-tel,.fi-biz{display:block;}}
 .price-note{font-size:12.5px;color:var(--steel);margin-top:12px;display:flex;gap:8px;align-items:flex-start;}
 
 /* ---------- usage rules ---------- */
@@ -891,8 +900,8 @@ footer{background:#1c2f1f;color:rgba(255,255,255,0.65);padding:48px 0 100px;}
     <div class="footer-top">
       <div class="footer-logo">⛺ 원탑관광농원&amp;원탑캠핑장</div>
       <div class="footer-info">
-        대표자 : 허감 &nbsp;|&nbsp; 사업자등록번호 : 208-37-01588<br>
-        주소 : 충북 괴산군 청천면 화양리 175 &nbsp;|&nbsp; 전화 : 010-5487-4319
+        <div><span class="fi-rep">대표자 : 허감</span><span class="fi-sep"> &nbsp;|&nbsp; </span><span class="fi-biz">사업자등록번호 : 208-37-01588</span></div>
+        <div><span class="fi-addr">주소 : 충북 괴산군 청천면 화양리 175</span><span class="fi-sep"> &nbsp;|&nbsp; </span><span class="fi-tel">전화 : 010-5487-4319</span></div>
       </div>
       <div class="footer-links">
         <a href="#about">소개</a>
