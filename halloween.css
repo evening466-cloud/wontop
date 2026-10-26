@@ -47,16 +47,17 @@ header.scrolled .hw-ch{transform:scaleY(calc(1 + (var(--s,1) - 1) * .45));animat
 @keyframes hw-pulse{0%,100%{box-shadow:0 6px 18px rgba(0,0,0,0.45),0 0 0 0 rgba(255,122,26,.5)}50%{box-shadow:0 6px 18px rgba(0,0,0,0.45),0 0 0 9px rgba(255,122,26,0)}}
 @media(min-width:960px){#hw-music{bottom:24px;}}
 
-/* 맨 위 할로윈 배너 */
-.hw-banner{text-align:center;margin:0 auto 46px;position:relative;z-index:2;}
-.hw-banner-title{
-  display:inline-block;font-family:'East Sea Dokdo','Jua',sans-serif;font-weight:400;line-height:1.35;
-  font-size:clamp(30px,6.2vw,60px);color:#FF9A3C;letter-spacing:.5px;
-  text-shadow:0 2px 0 #1a0d2e,0 0 18px rgba(255,122,26,.55);
+.nav-desktop a{white-space:nowrap;}
+@media(min-width:960px) and (max-width:1199px){
+  .header-inner .nav-badge{display:none;}
+  .logo{font-size:26px;}
+  .nav-desktop a{font-size:22px;padding:6px 10px;}
 }
+/* 로고 옆 "할로윈" + 불 켜진 호박등 */
+.hw-logo-text{display:inline-block;line-height:1.1;}
 .hw-word{white-space:nowrap;display:inline-block;}
 .hw-lantern{
-  display:inline-block;width:2.7em;height:auto;margin-left:.1em;vertical-align:-.7em;transform:rotate(7deg);
+  display:inline-block;width:1.75em;height:auto;margin:-.5em 0 -.5em .15em;vertical-align:middle;transform:rotate(7deg);
   filter:drop-shadow(0 0 14px rgba(255,150,30,.85)) drop-shadow(0 0 32px rgba(255,110,10,.55));
   animation:hw-lantern 2.6s ease-in-out infinite;
 }

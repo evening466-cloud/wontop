@@ -69,53 +69,62 @@
     }
     node.parentNode.replaceChild(frag, node);
   }
-  // 맨 위 할로윈 배너: 녹아내리는 글씨 + 마지막 "윈" 옆의 불 켜진 큰 호박등
-  var heroWrap = document.querySelector('.hero > .wrap');
-  if (heroWrap) {
-    var banner = document.createElement('div');
-    banner.className = 'hw-banner';
-    var title = document.createElement('h2');
-    title.className = 'hw-banner-title';
-    title.setAttribute('aria-label', '원탑관광농원 원탑캠핑장과 함께 하는 할로윈');
-    '원탑관광농원 원탑캠핑장과 함께 하는 할로윈'.split(' ').forEach(function (word, wi, arr) {
-      var w = document.createElement('span');
-      w.className = 'hw-word';
-      w.setAttribute('aria-hidden', 'true');
-      for (var i = 0; i < word.length; i++, n++) {
-        var c = document.createElement('span');
-        c.className = 'hw-ch';
-        c.style.setProperty('--s', stretch[(n * 3) % stretch.length]);
-        c.style.setProperty('--d', (-(n % 7) * 0.6) + 's');
-        c.textContent = word[i];
-        w.appendChild(c);
-      }
-      title.appendChild(w);
-      if (wi < arr.length - 1) title.appendChild(document.createTextNode(' '));
+  function letters(text) {
+    var w = document.createElement('span');
+    w.className = 'hw-word';
+    w.setAttribute('aria-hidden', 'true');
+    for (var i = 0; i < text.length; i++, n++) {
+      var c = document.createElement('span');
+      c.className = 'hw-ch';
+      c.style.setProperty('--s', stretch[(n * 3) % stretch.length]);
+      c.style.setProperty('--d', (-(n % 7) * 0.6) + 's');
+      c.textContent = text[i];
+      w.appendChild(c);
+    }
+    return w;
+  }
+  var lanternSvg =
+    '<svg class="hw-lantern" viewBox="0 0 120 112" aria-hidden="true">' +
+      '<defs>' +
+        '<radialGradient id="hwBody" cx="50%" cy="55%" r="60%"><stop offset="0" stop-color="#ffb347"/><stop offset="1" stop-color="#e8590c"/></radialGradient>' +
+        '<radialGradient id="hwFace" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#fffbd0"/><stop offset="1" stop-color="#ffd23f"/></radialGradient>' +
+        '<filter id="hwGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>' +
+      '</defs>' +
+      '<ellipse cx="60" cy="66" rx="52" ry="42" fill="#ff7a1a" opacity=".28" class="hw-lan-aura"/>' +
+      '<ellipse cx="38" cy="66" rx="24" ry="36" fill="url(#hwBody)"/>' +
+      '<ellipse cx="82" cy="66" rx="24" ry="36" fill="url(#hwBody)"/>' +
+      '<ellipse cx="60" cy="66" rx="29" ry="39" fill="url(#hwBody)"/>' +
+      '<path d="M48 32 C44 52 44 80 48 98 M72 32 C76 52 76 80 72 98" stroke="#b8400a" stroke-width="2" fill="none" opacity=".55"/>' +
+      '<path d="M55 30 C53 15 61 8 71 5 C69 14 67 21 67 30 Z" fill="#55761f"/>' +
+      '<g class="hw-lan-face" filter="url(#hwGlow)" fill="url(#hwFace)">' +
+        '<polygon points="38,58 54,58 46,43"/><polygon points="66,58 82,58 74,43"/>' +
+        '<polygon points="56,68 64,68 60,61"/>' +
+        '<polygon points="33,76 42,71 48,80 54,73 60,82 66,73 72,80 78,71 87,76 82,90 70,96 60,92 50,96 38,90"/>' +
+      '</g>' +
+    '</svg>';
+
+  // 기존 로고 글씨 옆에 "할로윈"을 붙이고, 마지막 "윈" 옆에 불 켜진 호박등을 단다
+  var logo = document.querySelector('.logo');
+  if (logo) {
+    var logoText = null;
+    Array.prototype.slice.call(logo.childNodes).forEach(function (c) {
+      if (c.nodeType === 3 && c.nodeValue.trim()) logoText = c;
     });
-    title.insertAdjacentHTML('beforeend',
-      '<svg class="hw-lantern" viewBox="0 0 120 112" aria-hidden="true">' +
-        '<defs>' +
-          '<radialGradient id="hwBody" cx="50%" cy="55%" r="60%"><stop offset="0" stop-color="#ffb347"/><stop offset="1" stop-color="#e8590c"/></radialGradient>' +
-          '<radialGradient id="hwFace" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#fffbd0"/><stop offset="1" stop-color="#ffd23f"/></radialGradient>' +
-          '<filter id="hwGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>' +
-        '</defs>' +
-        '<ellipse cx="60" cy="66" rx="52" ry="42" fill="#ff7a1a" opacity=".28" class="hw-lan-aura"/>' +
-        '<ellipse cx="38" cy="66" rx="24" ry="36" fill="url(#hwBody)"/>' +
-        '<ellipse cx="82" cy="66" rx="24" ry="36" fill="url(#hwBody)"/>' +
-        '<ellipse cx="60" cy="66" rx="29" ry="39" fill="url(#hwBody)"/>' +
-        '<path d="M48 32 C44 52 44 80 48 98 M72 32 C76 52 76 80 72 98" stroke="#b8400a" stroke-width="2" fill="none" opacity=".55"/>' +
-        '<path d="M55 30 C53 15 61 8 71 5 C69 14 67 21 67 30 Z" fill="#55761f"/>' +
-        '<g class="hw-lan-face" filter="url(#hwGlow)" fill="url(#hwFace)">' +
-          '<polygon points="38,58 54,58 46,43"/><polygon points="66,58 82,58 74,43"/>' +
-          '<polygon points="56,68 64,68 60,61"/>' +
-          '<polygon points="33,76 42,71 48,80 54,73 60,82 66,73 72,80 78,71 87,76 82,90 70,96 60,92 50,96 38,90"/>' +
-        '</g>' +
-      '</svg>');
-    banner.appendChild(title);
-    heroWrap.insertBefore(banner, heroWrap.firstChild);
+    if (logoText) {
+      var base = logoText.nodeValue.trim();
+      var box = document.createElement('span');
+      box.className = 'hw-logo-text';
+      box.appendChild(letters(base));
+      box.appendChild(document.createTextNode(' '));
+      var last = letters('할로윈');
+      last.insertAdjacentHTML('beforeend', lanternSvg);
+      box.appendChild(last);
+      logo.replaceChild(box, logoText);
+      logo.setAttribute('aria-label', base + ' 할로윈');
+    }
   }
 
-  document.querySelectorAll('.logo, .nav-desktop a').forEach(function (el) {
+  document.querySelectorAll('.nav-desktop a').forEach(function (el) {
     el.setAttribute('aria-label', el.textContent.trim());
     Array.prototype.slice.call(el.childNodes).forEach(function (c) {
       if (c.nodeType === 3 && c.nodeValue.trim()) melt(c);
