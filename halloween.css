@@ -47,6 +47,26 @@ header.scrolled .hw-ch{transform:scaleY(calc(1 + (var(--s,1) - 1) * .45));animat
 @keyframes hw-pulse{0%,100%{box-shadow:0 6px 18px rgba(0,0,0,0.45),0 0 0 0 rgba(255,122,26,.5)}50%{box-shadow:0 6px 18px rgba(0,0,0,0.45),0 0 0 9px rgba(255,122,26,0)}}
 @media(min-width:960px){#hw-music{bottom:24px;}}
 
+/* 맨 위 할로윈 배너 */
+.hw-banner{text-align:center;margin:0 auto 46px;position:relative;z-index:2;}
+.hw-banner-title{
+  display:inline-block;font-family:'East Sea Dokdo','Jua',sans-serif;font-weight:400;line-height:1.35;
+  font-size:clamp(30px,6.2vw,60px);color:#FF9A3C;letter-spacing:.5px;
+  text-shadow:0 2px 0 #1a0d2e,0 0 18px rgba(255,122,26,.55);
+}
+.hw-word{white-space:nowrap;display:inline-block;}
+.hw-lantern{
+  display:inline-block;width:2.7em;height:auto;margin-left:.1em;vertical-align:-.7em;transform:rotate(7deg);
+  filter:drop-shadow(0 0 14px rgba(255,150,30,.85)) drop-shadow(0 0 32px rgba(255,110,10,.55));
+  animation:hw-lantern 2.6s ease-in-out infinite;
+}
+.hw-lan-aura{animation:hw-aura 2.6s ease-in-out infinite;}
+.hw-lan-face{animation:hw-face 2.6s ease-in-out infinite;}
+@keyframes hw-lantern{0%,100%{transform:rotate(7deg) translateY(0)}50%{transform:rotate(3deg) translateY(-4px)}}
+@keyframes hw-aura{0%,100%{opacity:.22}45%{opacity:.4}70%{opacity:.28}}
+@keyframes hw-face{0%,100%{opacity:1}35%{opacity:.82}60%{opacity:1}80%{opacity:.9}}
+@media(prefers-reduced-motion:reduce){.hw-lantern,.hw-lan-aura,.hw-lan-face{animation:none}}
+
 /* 입장 화면 */
 #hw-splash{
   position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;
